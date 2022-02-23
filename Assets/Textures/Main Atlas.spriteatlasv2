@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!612988286 &1
+SpriteAtlasAsset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_MasterAtlas: {fileID: 0}
+  m_ImporterData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 2
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 47
+      m_TextureCompression: 1
+      m_CompressionQuality: 0
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 6ce331f854641fa49816b86e685dde3d, type: 3}
+    - {fileID: 2800000, guid: a2cbc16fc577e0e40ad3a4ae6eb71f65, type: 3}
+    - {fileID: 2800000, guid: 0f91d71310891684e8f17a4228864d65, type: 3}
+    - {fileID: 2800000, guid: 73ba6c86d07f06d47825c6af4a064a83, type: 3}
+    - {fileID: 2800000, guid: dc75016900cb4a94abbe3f331d64fc76, type: 3}
+    - {fileID: 2800000, guid: eb7b2d7785a2f7a4dacf0dbad336bc6f, type: 3}
+    - {fileID: 2800000, guid: be25f5b9fe18a334c856a0c2113fdb4b, type: 3}
+    - {fileID: 2800000, guid: a1ca87f522c109a4b9ad5a0bb3ece27d, type: 3}
+    - {fileID: 2800000, guid: ac7a93062c0a86649a16da1ac76bd952, type: 3}
+    - {fileID: 2800000, guid: 46a694dd195901d408e45c66468abc3b, type: 3}
+    - {fileID: 2800000, guid: bf20aa68dca738a40bc59eab1109ab78, type: 3}
+    - {fileID: 2800000, guid: ab55db4aa1f77a44a9174e2ea94be1ae, type: 3}
+    - {fileID: 2800000, guid: d5d817e9665f9b842ae9d1ef1bd44d5e, type: 3}
+    - {fileID: 2800000, guid: 27caf30bbf197174a81ccafaeaa7fa47, type: 3}
+    - {fileID: 2800000, guid: f87768c2927e2844e8af51363b6164b2, type: 3}
+    - {fileID: 2800000, guid: 0d55367c656b9d64095754570045f31a, type: 3}
+    - {fileID: 2800000, guid: ac76fddb7664f654797955bb0666f402, type: 3}
+    - {fileID: 2800000, guid: 2dacbcec591715640bb4deee3129f4cc, type: 3}
+    - {fileID: 2800000, guid: 66d73be9671d79240bad1241a0f20325, type: 3}
+    totalSpriteSurfaceArea: 0
+    bindAsDefault: 1
+    isAtlasV2: 1
+    cachedData: {fileID: 0}
+  m_IsVariant: 0
