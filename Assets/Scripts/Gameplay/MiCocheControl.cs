@@ -11,6 +11,8 @@ public class MiCocheControl : MonoBehaviour
 
     public Slider sliderR;
     public Slider sliderL;
+    public ParticleSystem chispas;
+    bool particlesPlay = false;
 
     void Start()
     {
@@ -34,7 +36,34 @@ public class MiCocheControl : MonoBehaviour
         // aplico las fuerzas en los laterales del coche chocador, dependiendo del valor de cada slider en pantalla
         car_Rigidbody.AddForceAtPosition(this.transform.forward * signoR * Mathf.Sqrt(Mathf.Abs(sliderR.value)) * multiplier * Time.deltaTime, fuerzaR.transform.position);
         car_Rigidbody.AddForceAtPosition(this.transform.forward * signoL * Mathf.Sqrt(Mathf.Abs(sliderL.value)) * multiplier * Time.deltaTime, fuerzaL.transform.position);
-        
+
+        // activar las particulas solo si el coche camina
+        //if (Mathf.Abs(sliderR.value) < 0.25f && Mathf.Abs(sliderL.value) < 0.25f)
+
+        // calcular velocidad del coche
+        Vector3 velCoche = car_Rigidbody.GetPointVelocity(transform.TransformPoint(this.transform.position));
+
+        Debug.LogError(velCoche);
+
+        if (Mathf.Abs(velCoche.x) < 2.0f && Mathf.Abs(velCoche.z) < 2.0f)
+        {
+            StopChispas();
+        }
+        else if (!particlesPlay)
+        {
+            PlayChispas();
+            particlesPlay = true;
+        }
     }
 
+    void PlayChispas()
+    {
+        chispas.Play();
+    }
+
+    void StopChispas()
+    {
+        chispas.Stop();
+        particlesPlay = false;
+    }
 }
