@@ -1,0 +1,340 @@
+fileFormatVersion: 2
+guid: cb5c8425c5ebbc34bab1a3d359da0366
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 1827226128182048838
+    second: Take 001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Barrera Metal
+    second: {fileID: 2100000, guid: 0dae6466f84f43c4a85e4e48759435b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabinas
+    second: {fileID: 2100000, guid: 1382c6de1f80ebe49a124563506b65d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Columnas
+    second: {fileID: 2100000, guid: dfe8534b02ca17e4486677e8d5871432, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Domo
+    second: {fileID: 2100000, guid: 701a252a80dd3404d8ff50c30d225483, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hule
+    second: {fileID: 2100000, guid: d1c8d822c9865ea4bafb5d93b9bd4280, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #13
+    second: {fileID: 2100000, guid: aa5571d385a26ca4f8201f649578cf67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #14
+    second: {fileID: 2100000, guid: e5eed2cee99e77d45a4569d70a1f36b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #2
+    second: {fileID: 2100000, guid: b70b796b8add647498519b2207cf3efd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #25
+    second: {fileID: 2100000, guid: 03061eb0ec2c33045b92f136035a5e5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #27
+    second: {fileID: 2100000, guid: 9f9e40f6c99a96346a8e5793387542fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #37 Slot #3
+    second: {fileID: 2100000, guid: 45576eac387098847a2579a7d21aa00d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #37 Slot #4
+    second: {fileID: 2100000, guid: d9e2bf5d341c18041aa5000c1e4f6e7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #37 Slot #5
+    second: {fileID: 2100000, guid: 7e8933170f683be44849423eb92a0be1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #37 Slot #6
+    second: {fileID: 2100000, guid: 702a088097474d14d8352aa8ad47fadd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #40
+    second: {fileID: 2100000, guid: b618712382cf57648b0b056966bcbe3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #47
+    second: {fileID: 2100000, guid: c3bc404433237cb49bc1bc280879afe4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #60
+    second: {fileID: 2100000, guid: f86f59e0448633f43b1cbac2ffb17cfb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #61
+    second: {fileID: 2100000, guid: 7e2da5f6566cb6146b4d2450acadcfe1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #62
+    second: {fileID: 2100000, guid: f66dcf51ef722ed4ca7144495cbd5925, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piso Metal general
+    second: {fileID: 2100000, guid: eb778f583e890ce4b88099cdf1a1a29c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piso Metal patron
+    second: {fileID: 2100000, guid: 7ec0bc7e585d6f94c81f0fd499cea2e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rin
+    second: {fileID: 2100000, guid: 28f2e6d93fb118144a6281521d81a609, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Taliban
+    second: {fileID: 2100000, guid: b2050d8d71013ae4588d03d36ba92494, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Techo reja
+    second: {fileID: 2100000, guid: 7602bcaaacbb6f348a7dbdfe56bccb35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: garage door
+    second: {fileID: 2100000, guid: 34d36d30fe10f4b498926a680157eda2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal viejo
+    second: {fileID: 2100000, guid: 893d180457f938d479af098907e47d94, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bower_Diffuce
+    second: {fileID: 2800000, guid: 9a496abce3ecb4e448f794bf39a582bb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: RoadBlocker2_D
+    second: {fileID: 2800000, guid: ee7877ad17f3d884ba06ea26f4dd4890, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TexturesCom_MetalBare0260_9_seamless_S
+    second: {fileID: 2800000, guid: c740bffeb003f994cb4f00f67b556fde, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TexturesCom_MetalFloorsBare0008_1_seamless_S
+    second: {fileID: 2800000, guid: 035488e748338da4184734af603a9ce6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TexturesCom_Metal_Mesh_1K_height
+    second: {fileID: 2800000, guid: 6016a68e293415246babea80d2dd0393, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: barrera negra
+    second: {fileID: 2800000, guid: 662a44d5c1104624da00fcf7ae7a9f3e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: basuraUVs
+    second: {fileID: 2800000, guid: c702f9a8332259145bbaa77805d7340d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bumper3_UVs
+    second: {fileID: 2800000, guid: 9df7d625fdbd9cd4795007289c8935de, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bumper_UVs
+    second: {fileID: 2800000, guid: be7d339d842e7aa4b9f32e55b8ff384d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: concbrick
+    second: {fileID: 2800000, guid: 075a493016fed144b885153656703995, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: granada_UVs
+    second: {fileID: 2800000, guid: f0990e5dd72f2264fab97ae5df0ed551, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: llanta_track
+    second: {fileID: 2800000, guid: 15654ec6a47a0154dbc7c5832305d109, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: llaveUVs
+    second: {fileID: 2800000, guid: 2bb470eae3b4be644a4274fb270c5071, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2800000, guid: e39daed4ab5ede74193e5370936d2be2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: old-tyre-texture-2
+    second: {fileID: 2800000, guid: d53d5e8012a0d9f4fb3636f6b3ed9b52, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: relojUVs
+    second: {fileID: 2800000, guid: 62f5d6efd3b564d47adf88613b48302b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: speed_red
+    second: {fileID: 2800000, guid: 1228f72001354a6458fc3287996d0d8e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: speed_yellow
+    second: {fileID: 2800000, guid: cffff8b16075b454e9a492ed8bdf7d49, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: stock-photo-full-frame-corrugated-metal-door-gate-rusty-texture-engineering-background-3a041748-cf2f-4d45-a656-e93c8be58f44
+    second: {fileID: 2800000, guid: 2cd3aa94f6abd364e8e2c16f900a358b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: talibanUVs
+    second: {fileID: 2800000, guid: 082458474b578154b85f044837c2baa8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tambo
+    second: {fileID: 2800000, guid: 9771dec5f9e1a474688f445ad4dbd4e1, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
