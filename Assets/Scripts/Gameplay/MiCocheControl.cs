@@ -38,13 +38,9 @@ public class MiCocheControl : MonoBehaviour
         car_Rigidbody.AddForceAtPosition(this.transform.forward * signoL * Mathf.Sqrt(Mathf.Abs(sliderL.value)) * multiplier * Time.deltaTime, fuerzaL.transform.position);
 
         // activar las particulas solo si el coche camina
-        //if (Mathf.Abs(sliderR.value) < 0.25f && Mathf.Abs(sliderL.value) < 0.25f)
-
         // calcular velocidad del coche
         Vector3 velCoche = car_Rigidbody.GetPointVelocity(transform.TransformPoint(this.transform.position));
-
-        Debug.LogError(velCoche);
-
+       
         if (Mathf.Abs(velCoche.x) < 2.0f && Mathf.Abs(velCoche.z) < 2.0f)
         {
             StopChispas();
