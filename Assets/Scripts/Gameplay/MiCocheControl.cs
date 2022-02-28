@@ -13,9 +13,11 @@ public class MiCocheControl : MonoBehaviour
     public Slider sliderL;
     public ParticleSystem chispas;
     bool particlesPlay = false;
+    public TMPro.TextMeshProUGUI colisionText;
 
     void Start()
     {
+        Application.targetFrameRate = 120;
         car_Rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -62,4 +64,10 @@ public class MiCocheControl : MonoBehaviour
         chispas.Stop();
         particlesPlay = false;
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        colisionText.text = (int)collision.relativeVelocity.magnitude + "";
+    }
+
 }

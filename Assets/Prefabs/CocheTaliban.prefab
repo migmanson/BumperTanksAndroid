@@ -4729,6 +4729,8 @@ GameObject:
   - component: {fileID: 3688652814951868378}
   - component: {fileID: 3688652814951868377}
   - component: {fileID: 3688652814951868376}
+  - component: {fileID: 899113663}
+  - component: {fileID: 899113664}
   m_Layer: 0
   m_Name: CocheTaliban
   m_TagString: Untagged
@@ -4754,6 +4756,7 @@ Transform:
   - {fileID: 5116697836118486125}
   - {fileID: 5059406544358522349}
   - {fileID: 6135127318116509893}
+  - {fileID: 543450651876984889}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4784,8 +4787,48 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!195 &899113663
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3688652814951868383}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 4
+  m_Acceleration: 1
+  avoidancePriority: 50
+  m_AngularSpeed: 8
+  m_StoppingDistance: 2
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 0
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 1
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &899113664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3688652814951868383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3296bfa8f7ee7064b8a527618e27cdc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlpoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  agent: {fileID: 0}
 --- !u!1 &3688652816393459246
 GameObject:
   m_ObjectHideFlags: 0
@@ -5110,3 +5153,73 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &1822978002
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3688652814951868378}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.018
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.291
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.106
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+      propertyPath: m_Name
+      value: taliban_text@Gaming (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4a8745f1973102d4b9685b36a7a3664f, type: 2}
+    - target: {fileID: 5866666021909216657, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+--- !u!4 &543450651876984889 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+  m_PrefabInstance: {fileID: 1822978002}
+  m_PrefabAsset: {fileID: 0}
