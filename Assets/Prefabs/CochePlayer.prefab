@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 80157181}
   - component: {fileID: 80157184}
   - component: {fileID: 80157183}
-  m_Layer: 0
-  m_Name: Sphere
+  m_Layer: 9
+  m_Name: Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80157180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.037, z: 0.385}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1460419846343219310}
@@ -47,7 +47,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80157180}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4622643278949233487}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FuerzaL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 1460419845972879771}
   - component: {fileID: 1460419845972879773}
   - component: {fileID: 1460419845972879772}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChocadorMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 1460419846343219309}
   - component: {fileID: 1460419846343219308}
   - component: {fileID: 7921645708701795123}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CochePlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -279,6 +279,11 @@ MonoBehaviour:
   sliderL: {fileID: 0}
   chispas: {fileID: 3133592147554900195}
   colisionText: {fileID: 0}
+  shooter: {fileID: 80157180}
+  bullet: {fileID: 8224683782363943662, guid: 4220caab821e96d4db6baac9d33a116a, type: 3}
+  bulletForce: 20
+  umbralShake: 2.5
+  MinShakeInterval: 0.5
 --- !u!1 &2769824591606469065
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +295,7 @@ GameObject:
   - component: {fileID: 443188615799210756}
   - component: {fileID: 3133592147554900195}
   - component: {fileID: 6967390133389304947}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FXChispas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4951,7 +4956,7 @@ GameObject:
   - component: {fileID: 2843123960371296867}
   - component: {fileID: 2843123960371296878}
   - component: {fileID: 2843123960371296879}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -5113,7 +5118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 922591857205501834}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FuerzaR
   m_TagString: Untagged
   m_Icon: {fileID: 0}

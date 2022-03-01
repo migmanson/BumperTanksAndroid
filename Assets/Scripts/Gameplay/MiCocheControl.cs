@@ -14,10 +14,20 @@ public class MiCocheControl : MonoBehaviour
     public ParticleSystem chispas;
     bool particlesPlay = false;
     public TMPro.TextMeshProUGUI colisionText;
+    
+    public GameObject shooter;
+    public GameObject bullet;
+    public float bulletForce = 20;
+
+    //shake area
+    public float umbralShake = 3.5f;
+    public float MinShakeInterval;
+    private float timeSinceLastShake;
+
 
     void Start()
     {
-        Application.targetFrameRate = 120;
+        Application.targetFrameRate = 60;
         car_Rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -52,7 +62,32 @@ public class MiCocheControl : MonoBehaviour
             PlayChispas();
             particlesPlay = true;
         }
+
+        //Debug.LogError(" shake !!! ! ! !  " + Input.acceleration.sqrMagnitude + "   " + umbralShake);
+
+        // Shake al telefono, dispara una bala
+        if (Input.acceleration.sqrMagnitude >= umbralShake
+            && Time.unscaledTime >= timeSinceLastShake + MinShakeInterval)
+        {
+            timeSinceLastShake = Time.unscaledTime;
+            ShootBullet();
+        }
     }
+
+    void ShootBullet()
+    {
+            // disparo bala
+            GameObject tmpBullet;
+            tmpBullet = Instantiate(bullet, shooter.transform.position, Quaternion.identity);            
+            tmpBullet.transform.up = shooter.transform.forward;
+            tmpBullet.GetComponent<Rigidbody>().AddForce(transform.forward *
+                                                        bulletForce,
+                                                        ForceMode.Impulse);
+            Destroy(tmpBullet.gameObject, 3f);
+
+            // efecto patea hacia atrás
+            car_Rigidbody.AddForce(-transform.forward * bulletForce * 50, ForceMode.Impulse);            
+        }
 
     void PlayChispas()
     {
