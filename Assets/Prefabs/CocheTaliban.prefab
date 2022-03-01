@@ -4843,6 +4843,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   agent: {fileID: 899113663}
+  foco1: {fileID: 7974861964551178905}
+  foco2: {fileID: 365614463718531378}
+  foco3: {fileID: 2741299990800610245}
+  matFocoVerde: {fileID: 2100000, guid: 52c3fabfe079f654e8b76c9990e9f585, type: 2}
+  matFocoGris: {fileID: 2100000, guid: 4277a984a25c85a46be5da4a73550a31, type: 2}
 --- !u!1 &3688652816393459246
 GameObject:
   m_ObjectHideFlags: 0

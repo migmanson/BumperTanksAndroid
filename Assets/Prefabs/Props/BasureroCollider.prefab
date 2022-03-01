@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1028540669424540331}
   - component: {fileID: 8117166338609934265}
   - component: {fileID: 9043386159570915349}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BasureroMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 761283532244880294}
   - component: {fileID: 9169983870775364575}
   - component: {fileID: 7189102980794869367}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BasureroCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -183,6 +183,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Llanta Collider (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7266289414589860530, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266289414993860865, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
 --- !u!4 &74480218 stripped
@@ -241,76 +249,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2506415462063999584, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2657520023040280510, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
       propertyPath: m_Name
       value: BasureroCollider (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2657520023040280510, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
---- !u!1 &108902832
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 108902834}
-  - component: {fileID: 108902833}
-  m_Layer: 0
-  m_Name: Reflection Probe
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!215 &108902833
-ReflectionProbe:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108902832}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
-  m_TimeSlicingMode: 0
-  m_Resolution: 128
-  m_UpdateFrequency: 0
-  m_BoxSize: {x: 54.72, y: 4, z: 34.2}
-  m_BoxOffset: {x: 0, y: 0, z: 0}
-  m_NearClip: 0.3
-  m_FarClip: 1000
-  m_ShadowDistance: 100
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IntensityMultiplier: 1
-  m_BlendDistance: 1
-  m_HDR: 1
-  m_BoxProjection: 0
-  m_RenderDynamicObjects: 0
-  m_UseOcclusionCulling: 1
-  m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
---- !u!4 &108902834
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108902832}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.12, y: 1.85, z: -15.01}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &152125145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -365,6 +317,14 @@ PrefabInstance:
     - target: {fileID: 7266289414589860530, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
       propertyPath: m_Name
       value: Llanta Collider (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266289414589860530, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266289414993860865, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
@@ -428,6 +388,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BarreraCaminoCollider (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7114934485340192275, guid: 0c794a594e5749b48b2ae5448515c7e6, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114934485696145495, guid: 0c794a594e5749b48b2ae5448515c7e6, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c794a594e5749b48b2ae5448515c7e6, type: 3}
 --- !u!1001 &212380221
@@ -459,7 +427,7 @@ PrefabInstance:
       objectReference: {fileID: 1434805394}
     - target: {fileID: 3688652814951868378, guid: 9b3ea7d218960b049a0346d0c452afc1, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 3688652814951868378, guid: 9b3ea7d218960b049a0346d0c452afc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -558,9 +526,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2506415462063999584, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2657520023040280510, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
       propertyPath: m_Name
       value: BasureroCollider (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657520023040280510, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
@@ -624,6 +600,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Llanta Collider (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7266289414589860530, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266289414993860865, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
 --- !u!4 &315600097 stripped
@@ -685,7 +669,7 @@ PrefabInstance:
       objectReference: {fileID: 1434805394}
     - target: {fileID: 3688652814951868378, guid: 9b3ea7d218960b049a0346d0c452afc1, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3688652814951868378, guid: 9b3ea7d218960b049a0346d0c452afc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -776,7 +760,7 @@ Transform:
   - {fileID: 653369488}
   - {fileID: 1434805394}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &567226383 stripped
 MonoBehaviour:
@@ -938,6 +922,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Llanta Collider (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7266289414589860530, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266289414993860865, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
 --- !u!1001 &636011560
@@ -994,6 +986,14 @@ PrefabInstance:
     - target: {fileID: 7266289414589860530, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
       propertyPath: m_Name
       value: Llanta Collider (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266289414589860530, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266289414993860865, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
@@ -1191,6 +1191,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Llanta Collider (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7266289414589860530, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266289414993860865, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
 --- !u!1001 &778704267
@@ -1200,6 +1208,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1760229663}
     m_Modifications:
+    - target: {fileID: 1658814824003423265, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1658814824059627534, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1248,6 +1260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tambo Collider (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1658814824059627635, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
 --- !u!4 &793334024 stripped
@@ -1262,6 +1278,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1760229663}
     m_Modifications:
+    - target: {fileID: 1658814824003423265, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1658814824059627534, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1309,6 +1329,10 @@ PrefabInstance:
     - target: {fileID: 1658814824059627635, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
       propertyPath: m_Name
       value: Tambo Collider (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658814824059627635, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
@@ -1372,6 +1396,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Llanta Collider (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7266289414589860530, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266289414993860865, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
 --- !u!1001 &932552290
@@ -1381,6 +1413,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1760229663}
     m_Modifications:
+    - target: {fileID: 1658814824003423265, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1658814824059627534, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -1428,6 +1464,10 @@ PrefabInstance:
     - target: {fileID: 1658814824059627635, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
       propertyPath: m_Name
       value: Tambo Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658814824059627635, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
@@ -1486,6 +1526,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Llanta Collider (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7266289414589860530, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266289414993860865, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
 --- !u!4 &1035767902 stripped
@@ -1518,7 +1566,7 @@ PrefabInstance:
       objectReference: {fileID: 1434805394}
     - target: {fileID: 3688652814951868378, guid: 9b3ea7d218960b049a0346d0c452afc1, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3688652814951868378, guid: 9b3ea7d218960b049a0346d0c452afc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1605,7 +1653,7 @@ PrefabInstance:
       objectReference: {fileID: 1434805394}
     - target: {fileID: 3688652814951868378, guid: 9b3ea7d218960b049a0346d0c452afc1, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3688652814951868378, guid: 9b3ea7d218960b049a0346d0c452afc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1704,9 +1752,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2506415462063999584, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2657520023040280510, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
       propertyPath: m_Name
       value: BasureroCollider (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657520023040280510, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
@@ -1719,7 +1775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1227289080}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Items
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1778,7 +1834,7 @@ PrefabInstance:
       objectReference: {fileID: 1434805394}
     - target: {fileID: 3688652814951868378, guid: 9b3ea7d218960b049a0346d0c452afc1, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3688652814951868378, guid: 9b3ea7d218960b049a0346d0c452afc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1886,6 +1942,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Llanta Collider (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7266289414589860530, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266289414993860865, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
 --- !u!1 &1401820969
@@ -1976,6 +2040,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1760229663}
     m_Modifications:
+    - target: {fileID: 1658814824003423265, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1658814824059627534, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2023,6 +2091,10 @@ PrefabInstance:
     - target: {fileID: 1658814824059627635, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
       propertyPath: m_Name
       value: Tambo Collider (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658814824059627635, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
@@ -2342,7 +2414,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 9.11, y: 0, z: 0}
 --- !u!1001 &1690986641
 PrefabInstance:
@@ -2532,6 +2604,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Llanta Collider (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7266289414589860530, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266289414993860865, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
 --- !u!1 &1732480761
@@ -2593,7 +2673,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1760229662
 GameObject:
@@ -2604,7 +2684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1760229663}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Props
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2707,6 +2787,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BarreraCaminoCollider (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7114934485340192275, guid: 0c794a594e5749b48b2ae5448515c7e6, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114934485696145495, guid: 0c794a594e5749b48b2ae5448515c7e6, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c794a594e5749b48b2ae5448515c7e6, type: 3}
 --- !u!1 &1945050771
@@ -2774,7 +2862,7 @@ Transform:
   m_Children:
   - {fileID: 576691510}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2105370589
 GameObject:
@@ -3289,6 +3377,10 @@ PrefabInstance:
       value: Granada
       objectReference: {fileID: 0}
     - target: {fileID: 3349417273678205382, guid: cad5759274d9a2f43aa6d566f7a63a85, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349417273678205382, guid: cad5759274d9a2f43aa6d566f7a63a85, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -3348,6 +3440,10 @@ PrefabInstance:
     - target: {fileID: 7623111023256290848, guid: 797257c6e7e4ecf45800378e658c2d9d, type: 3}
       propertyPath: m_Name
       value: Rayo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623111023256290848, guid: 797257c6e7e4ecf45800378e658c2d9d, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7623111023256290848, guid: 797257c6e7e4ecf45800378e658c2d9d, type: 3}
       propertyPath: m_IsActive
@@ -3411,6 +3507,10 @@ PrefabInstance:
       value: Llave
       objectReference: {fileID: 0}
     - target: {fileID: 8686851218987935433, guid: 6c4fbc4e910327f43b675161d25a72e8, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686851218987935433, guid: 6c4fbc4e910327f43b675161d25a72e8, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -3467,9 +3567,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2506415462063999584, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2657520023040280510, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
       propertyPath: m_Name
       value: BasureroCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657520023040280510, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
@@ -3528,6 +3636,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BarreraCaminoCollider
       objectReference: {fileID: 0}
+    - target: {fileID: 7114934485340192275, guid: 0c794a594e5749b48b2ae5448515c7e6, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114934485696145495, guid: 0c794a594e5749b48b2ae5448515c7e6, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c794a594e5749b48b2ae5448515c7e6, type: 3}
 --- !u!1001 &7266289413600521146
@@ -3584,6 +3700,14 @@ PrefabInstance:
     - target: {fileID: 7266289414589860530, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
       propertyPath: m_Name
       value: Llanta Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266289414589860530, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266289414993860865, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 374c8283ad5172842828baf09e821b3b, type: 3}
@@ -3654,6 +3778,10 @@ PrefabInstance:
     - target: {fileID: 4721326968389610097, guid: fbe3ef8dbb1207d498610ca5aec76a10, type: 3}
       propertyPath: m_Name
       value: Reloj
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721326968389610097, guid: fbe3ef8dbb1207d498610ca5aec76a10, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4721326968389610097, guid: fbe3ef8dbb1207d498610ca5aec76a10, type: 3}
       propertyPath: m_IsActive

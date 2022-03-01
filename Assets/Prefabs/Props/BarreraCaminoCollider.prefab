@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7114934485340192272}
   - component: {fileID: 7114934485340192286}
   - component: {fileID: 7114934485340192273}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BarreraCaminoCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 7114934485696145492}
   - component: {fileID: 7114934485696145490}
   - component: {fileID: 7114934485696145493}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BarreraCaminoMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

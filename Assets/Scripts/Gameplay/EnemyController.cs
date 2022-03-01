@@ -8,7 +8,13 @@ public class EnemyController : MonoBehaviour
     public NavMeshAgent agent;
     private Transform player;
     private Animator animatorcontroller;
-    private short lives;
+    private int lives;
+    public MeshRenderer foco1;
+    public MeshRenderer foco2;
+    public MeshRenderer foco3;
+    public Material matFocoVerde;
+    public Material matFocoGris;
+
 
     void Start()
     {
@@ -17,6 +23,9 @@ public class EnemyController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         InvokeRepeating("ApplyDestination", 0, 4.0f);
         animatorcontroller = GetComponentInChildren<Animator>();
+        foco1.material = matFocoVerde;
+        foco2.material = matFocoVerde;
+        foco3.material = matFocoVerde;
     }
 
     public void ApplyDestination()
@@ -27,31 +36,36 @@ public class EnemyController : MonoBehaviour
         //Debug.LogError(agent.destination);
     }
 
-    private void Update()
-    {
-        //ApplyDestination();
-        if (lives <= 0) 
-        {
-            //Debug.LogError("lives " + lives);
-            animatorcontroller.SetBool("muere", true);
-            Destroy(this.gameObject, 3);
-        }
-    }
 
     void OnCollisionEnter(Collision collision)
     {
         // choques fuertes
-        if (collision.relativeVelocity.magnitude > 10 && collision.collider.tag == "Player")
+        if (collision.relativeVelocity.magnitude > 10)
         {
-            lives--;
+            // Debug.LogError("lives " + lives + " collision: " + collision.collider.name);
+            if (collision.relativeVelocity.magnitude > 20)
+            {
+                UpdateLives(3);
+            }
+            else if (collision.relativeVelocity.magnitude > 15)
+            {
+                UpdateLives(2);
+            }
+            else { 
+                UpdateLives(1); 
+            }
+
             //Debug.LogError("lives " + lives);
             if (lives > 0)
             {
                 animatorcontroller.SetBool("duele", true);
                 Invoke("ResetAnimationHit", 0.2f);
             }
-            
-        }            
+            else {
+                animatorcontroller.SetBool("muere", true);
+                Destroy(this.gameObject, 3);
+            }
+        }
     }
 
     void ResetAnimationHit()
@@ -62,13 +76,42 @@ public class EnemyController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // colision con la bala
-        lives--;
-        //Debug.LogError("lives " + lives);
-        //Debug.LogError("en enemy controller  "  + other.name);
+        UpdateLives(1);
+        //Debug.LogError("lives " + lives + " collider: " + other.name);
+
         if (lives > 0)
         {
             animatorcontroller.SetBool("duele", true);
             Invoke("ResetAnimationHit", 0.2f);
+        }
+        else
+        {
+            animatorcontroller.SetBool("muere", true);
+            Destroy(this.gameObject, 3);
+        }
+    }
+
+    void UpdateLives(int howManyLost = 1)
+    {
+        lives = lives - howManyLost;
+
+        if (lives == 2)
+        {
+            foco1.material = matFocoVerde;
+            foco2.material = matFocoVerde;
+            foco3.material = matFocoGris;
+        }
+        else if (lives == 1)
+        {
+            foco1.material = matFocoVerde;
+            foco2.material = matFocoGris;
+            foco3.material = matFocoGris;
+        }
+        if (lives <= 0)
+        {
+            foco1.material = matFocoGris;
+            foco2.material = matFocoGris;
+            foco3.material = matFocoGris;
         }
     }
 

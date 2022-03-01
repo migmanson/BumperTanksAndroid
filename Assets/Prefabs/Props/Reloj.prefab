@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4741091117127950911}
   - component: {fileID: 1933730371075406527}
   - component: {fileID: 3760387837472341263}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Reloj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
