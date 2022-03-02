@@ -14,15 +14,16 @@ public class EnemyController : MonoBehaviour
     public MeshRenderer foco3;
     public Material matFocoVerde;
     public Material matFocoGris;
-
+    private bool isDead;
 
     void Start()
     {
         health = 3;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = 7;
+        isDead = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        agent.SetDestination(player.transform.position);        
+        agent.SetDestination(player.transform.position);
         animatorcontroller = GetComponentInChildren<Animator>();
         foco1.material = matFocoVerde;
         foco2.material = matFocoVerde;
@@ -32,7 +33,7 @@ public class EnemyController : MonoBehaviour
     public void ApplyDestination()
     {
         controlpoints = GameObject.Find("Controlpoints").GetComponentsInChildren<Transform>();
-        agent.SetDestination(controlpoints[Random.Range(0, controlpoints.Length)].position);        
+        agent.SetDestination(controlpoints[Random.Range(0, controlpoints.Length)].position);
     }
 
 
@@ -59,16 +60,20 @@ public class EnemyController : MonoBehaviour
             if (health > 0)
             {
                 animatorcontroller.SetBool("duele", true);
+                SoundController.Instance.PlaySoundByIndex(5, this.transform.position);
                 Invoke("ResetAnimationHit", 0.2f);
             }
             else
             {
-                animatorcontroller.SetBool("muere", true);
-                SoundController.Instance.PlaySoundByIndex(4, this.transform.position);
-                GameController.Instance.EnemyDestroyed();
-                Destroy(this.gameObject, 3);
+                Dies();
             }
         }
+        else if (collision.relativeVelocity.magnitude > 8 && collision.transform.tag == "Player")
+        {
+            // Sonido risa
+            SoundController.Instance.PlaySoundByIndex(7, this.transform.position);
+        }
+
     }
 
     void ResetAnimationHit()
@@ -87,21 +92,20 @@ public class EnemyController : MonoBehaviour
             if (health > 0)
             {
                 animatorcontroller.SetBool("duele", true);
+                SoundController.Instance.PlaySoundByIndex(6, this.transform.position);
                 Invoke("ResetAnimationHit", 0.2f);
             }
             else
             {
-                animatorcontroller.SetBool("muere", true);
-                Destroy(this.gameObject, 3);
+                Dies();
             }
         }
-        else if (other.transform.name == "ExitGarageTrigger") 
+        else if (other.transform.name == "ExitGarageTrigger")
         {
             exitGarage = true;
             agent.speed = 4;
             InvokeRepeating("ApplyDestination", 0, 4.0f);
         }
-
     }
 
     void UpdateLives(int howManyLost = 1)
@@ -128,4 +132,15 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    void Dies()
+    {
+        if (!isDead)
+        {
+            isDead = true;
+            animatorcontroller.SetBool("muere", true);
+            SoundController.Instance.PlaySoundByIndex(4, this.transform.position);
+            GameController.Instance.EnemyDestroyed();
+            Destroy(this.gameObject, 2.5f);            
+        }
+    }
 }
