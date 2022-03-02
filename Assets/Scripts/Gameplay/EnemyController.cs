@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-
 public class EnemyController : MonoBehaviour
 {
     public Transform[] controlpoints;
     public NavMeshAgent agent;
     private Transform player;
     private Animator animatorcontroller;
-    private int lives;
+    public int lives;
+    public bool exitGarage = false;
     public MeshRenderer foco1;
     public MeshRenderer foco2;
     public MeshRenderer foco3;
@@ -20,8 +20,9 @@ public class EnemyController : MonoBehaviour
     {
         lives = 3;
         agent = GetComponent<NavMeshAgent>();
+        agent.speed = 7;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        InvokeRepeating("ApplyDestination", 0, 4.0f);
+        agent.SetDestination(player.transform.position);        
         animatorcontroller = GetComponentInChildren<Animator>();
         foco1.material = matFocoVerde;
         foco2.material = matFocoVerde;
@@ -31,7 +32,7 @@ public class EnemyController : MonoBehaviour
     public void ApplyDestination()
     {
         //agent.SetDestination(player.position);
-        
+        controlpoints = GameObject.Find("Controlpoints").GetComponentsInChildren<Transform>();
         agent.SetDestination(controlpoints[Random.Range(0, controlpoints.Length)].position);
         //Debug.LogError(agent.destination);
     }
@@ -51,8 +52,9 @@ public class EnemyController : MonoBehaviour
             {
                 UpdateLives(2);
             }
-            else { 
-                UpdateLives(1); 
+            else
+            {
+                UpdateLives(1);
             }
 
             //Debug.LogError("lives " + lives);
@@ -61,7 +63,8 @@ public class EnemyController : MonoBehaviour
                 animatorcontroller.SetBool("duele", true);
                 Invoke("ResetAnimationHit", 0.2f);
             }
-            else {
+            else
+            {
                 animatorcontroller.SetBool("muere", true);
                 Destroy(this.gameObject, 3);
             }
@@ -75,20 +78,30 @@ public class EnemyController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // colision con la bala
-        UpdateLives(1);
-        //Debug.LogError("lives " + lives + " collider: " + other.name);
+        if (other.tag == "Bullet")
+        {
+            // colision con la bala
+            UpdateLives(1);
+            //Debug.LogError("lives " + lives + " collider: " + other.name);
 
-        if (lives > 0)
-        {
-            animatorcontroller.SetBool("duele", true);
-            Invoke("ResetAnimationHit", 0.2f);
+            if (lives > 0)
+            {
+                animatorcontroller.SetBool("duele", true);
+                Invoke("ResetAnimationHit", 0.2f);
+            }
+            else
+            {
+                animatorcontroller.SetBool("muere", true);
+                Destroy(this.gameObject, 3);
+            }
         }
-        else
+        else if (other.transform.name == "ExitGarageTrigger") 
         {
-            animatorcontroller.SetBool("muere", true);
-            Destroy(this.gameObject, 3);
+            exitGarage = true;
+            agent.speed = 4;
+            InvokeRepeating("ApplyDestination", 0, 4.0f);
         }
+
     }
 
     void UpdateLives(int howManyLost = 1)

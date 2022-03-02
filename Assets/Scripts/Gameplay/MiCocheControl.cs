@@ -14,7 +14,7 @@ public class MiCocheControl : MonoBehaviour
     public ParticleSystem chispas;
     bool particlesPlay = false;
     public TMPro.TextMeshProUGUI colisionText;
-    
+
     public GameObject shooter;
     public GameObject bullet;
     public float bulletForce = 20;
@@ -24,11 +24,21 @@ public class MiCocheControl : MonoBehaviour
     public float MinShakeInterval;
     private float timeSinceLastShake;
 
+    private Cinemachine.CinemachineVirtualCamera vcam1;
 
     void Start()
     {
-        Application.targetFrameRate = 60;
         car_Rigidbody = GetComponent<Rigidbody>();
+        vcam1 = GameObject.FindObjectOfType<Cinemachine.CinemachineVirtualCamera>();
+        vcam1.Follow = this.transform;
+        vcam1.LookAt = this.transform;
+        sliderR = GameObject.Find("HandleR").GetComponent<Slider>();
+        sliderL = GameObject.Find("HandleL").GetComponent<Slider>();
+    }
+
+    public void GameStart()
+    {
+
     }
 
     void Update()
@@ -52,7 +62,7 @@ public class MiCocheControl : MonoBehaviour
         // activar las particulas solo si el coche camina
         // calcular velocidad del coche
         Vector3 velCoche = car_Rigidbody.GetPointVelocity(transform.TransformPoint(this.transform.position));
-       
+
         if (Mathf.Abs(velCoche.x) < 2.0f && Mathf.Abs(velCoche.z) < 2.0f)
         {
             StopChispas();
@@ -76,18 +86,18 @@ public class MiCocheControl : MonoBehaviour
 
     void ShootBullet()
     {
-            // disparo bala
-            GameObject tmpBullet;
-            tmpBullet = Instantiate(bullet, shooter.transform.position, Quaternion.identity);            
-            tmpBullet.transform.up = shooter.transform.forward;
-            tmpBullet.GetComponent<Rigidbody>().AddForce(transform.forward *
-                                                        bulletForce,
-                                                        ForceMode.Impulse);
-            Destroy(tmpBullet.gameObject, 3f);
+        // disparo bala
+        GameObject tmpBullet;
+        tmpBullet = Instantiate(bullet, shooter.transform.position, Quaternion.identity);
+        tmpBullet.transform.up = shooter.transform.forward;
+        tmpBullet.GetComponent<Rigidbody>().AddForce(transform.forward *
+                                                    bulletForce,
+                                                    ForceMode.Impulse);
+        Destroy(tmpBullet.gameObject, 3f);
 
-            // efecto patea hacia atrás
-            car_Rigidbody.AddForce(-transform.forward * bulletForce * 50, ForceMode.Impulse);            
-        }
+        // efecto patea hacia atrás
+        car_Rigidbody.AddForce(-transform.forward * bulletForce * 50, ForceMode.Impulse);
+    }
 
     void PlayChispas()
     {
@@ -102,7 +112,7 @@ public class MiCocheControl : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        colisionText.text = (int)collision.relativeVelocity.magnitude + "";
+        //colisionText.text = (int)collision.relativeVelocity.magnitude + "";
     }
 
 }

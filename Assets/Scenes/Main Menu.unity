@@ -224,6 +224,74 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &462784287
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 230582532643792081, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 230582532643792081, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -34.698
+      objectReference: {fileID: 0}
+    - target: {fileID: 230582532643792081, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.037
+      objectReference: {fileID: 0}
+    - target: {fileID: 230582532643792081, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -19.331999
+      objectReference: {fileID: 0}
+    - target: {fileID: 230582532643792081, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 230582532643792081, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 230582532643792081, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 230582532643792081, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 230582532643792081, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 230582532643792081, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 230582532643792081, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 230582532643792087, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+      propertyPath: m_Name
+      value: GAME CONTROLLER
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+--- !u!114 &462784288 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 230582532643792082, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+  m_PrefabInstance: {fileID: 462784287}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d822933f2697c4389f4d9d3d9b03b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &835926647
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +477,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
   m_Antialiasing: 1
   m_AntialiasingQuality: 2
@@ -618,7 +687,7 @@ PrefabInstance:
     - target: {fileID: 2816430838524292357, guid: b7b6311614aa2f340ab3da4f16a6515a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1687258583}
+      objectReference: {fileID: 462784288}
     - target: {fileID: 2816430838524292357, guid: b7b6311614aa2f340ab3da4f16a6515a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -629,7 +698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2816430838524292357, guid: b7b6311614aa2f340ab3da4f16a6515a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: StartNewGame, Assembly-CSharp
+      value: UIController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2816430838524292357, guid: b7b6311614aa2f340ab3da4f16a6515a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
