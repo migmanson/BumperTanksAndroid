@@ -48,6 +48,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 0}
+  playerGO: {fileID: 0}
+  talibanGO: {fileID: 3688652814951868383, guid: 9b3ea7d218960b049a0346d0c452afc1, type: 3}
+  bossGO: {fileID: 3688652814951868383, guid: 9b3ea7d218960b049a0346d0c452afc1, type: 3}
+  portonController: {fileID: 0}
+  enemigosPorAparecer: 5
+  enemigosVivosEsteNivel: 0
 --- !u!114 &230582532643792093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,9 +80,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c49a5c76befa13499af088c0ea941da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameSounds: []
+  GameSounds:
+  - {fileID: 8300000, guid: e0a4e5ce0f2b52643abb040815146ac8, type: 3}
+  - {fileID: 8300000, guid: 8607df1aab82e8f40b0f04459db8bafd, type: 3}
+  - {fileID: 8300000, guid: 444d53089a16fe9478965cae7f79113b, type: 3}
+  - {fileID: 8300000, guid: 52636a958d0512645876a062d1eaab61, type: 3}
+  - {fileID: 8300000, guid: df26e01c916149e44afd3c5ee794b476, type: 3}
   volume: 1
-  gamePrefsName: DefaultGame
 --- !u!114 &230582532643792080
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,17 +4,32 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+
+    public static GameController Instance;
     bool paused;
     public GameObject explosionPrefab;
     public GameObject playerGO;
     public GameObject talibanGO;
     public GameObject bossGO;
     public Animator portonController;
-    public int enemiesInLevel;
+    public int enemigosPorAparecer;
+    public int enemigosVivosEsteNivel;
+
+    public void Awake()
+    {
+        Instance = this;
+        Application.targetFrameRate = 60;
+        StartCoroutine("KeepAccelerometerAlive");
+    }
+
+    IEnumerator KeepAccelerometerAlive()
+    {
+        yield return Input.acceleration.sqrMagnitude;
+        yield return new WaitForSeconds(1.0f);
+    }
 
     void Start()
     {
-        Application.targetFrameRate = 60;
         StartGame();
     }
 
@@ -34,51 +49,55 @@ public class GameController : MonoBehaviour
     }
     public virtual void StartGame()
     {
+        enemigosVivosEsteNivel = 0;
         // do start game functions
         Invoke("SpawnPlayer", 1);
         //InvokeRepeating("SpawnEnemy", 1, 10);
-        StartCoroutine("SpawnEnemy");
+        StartCoroutine("SpawnEnemies");
     }
 
-    IEnumerator SpawnEnemy()
+    IEnumerator SpawnEnemies()
     {
         yield return new WaitForSeconds(0.3f);
 
-        while (enemiesInLevel > 0)
+        while (enemigosPorAparecer > 0)
         {
 
             yield return new WaitForSeconds(8f);
             GameObject enemy = null;
             EnemyController enemyScript;
             // the player needs to be spawned
-            if (enemiesInLevel > 1)
+            if (enemigosPorAparecer > 1)
             {
                 enemy = Instantiate(talibanGO, new Vector3(0.5f, 0.0f, -30.5f), Quaternion.Euler(0, -45, 0));
                 //yield return new WaitForSeconds(0.5f);
                 enemy.GetComponent<EnemyController>().ApplyDestination();
-                enemiesInLevel--;
+                
             }
-            else if (enemiesInLevel > 0)
+            else if (enemigosPorAparecer > 0)
             {
                 enemy = Instantiate(talibanGO, new Vector3(0.5f, 0.0f, -30.5f), Quaternion.Euler(0, -45, 0));
                 enemy.gameObject.transform.name = enemy.gameObject.transform.name + "BOSS";
                 yield return new WaitForSeconds(0.5f);
                 enemy.GetComponent<EnemyController>().ApplyDestination();
-                enemiesInLevel--;
+                
             }
+            enemigosPorAparecer--;
+            enemigosVivosEsteNivel++;
             portonController.SetTrigger("AbrePorton");
             enemyScript = enemy.GetComponent<EnemyController>();
             //yield return new WaitForSeconds(3f);
-            while (!enemyScript.exitGarage && enemyScript.lives >= 0)
+            while (!enemyScript.exitGarage && enemyScript.health >= 0)
             {
                 yield return new WaitForSeconds(0.25f);
             }
             //Debug.LogError("CierraPorton");
             portonController.SetTrigger("CierraPorton");
             //enemy.GetComponent<BoxCollider>().enabled = true;
-            
+
         }
         //Debug.LogError("FINISHED SPAWNING ENEMIES ");
+
     }
 
 
@@ -95,11 +114,25 @@ public class GameController : MonoBehaviour
         // instantiate an explosion at the position passed into this function
         Instantiate(explosionPrefab, aPosition, Quaternion.identity);
     }
-    public virtual void EnemyDestroyed(Vector3 aPosition, int pointsValue,
-    int hitByID)
+    public virtual void EnemyDestroyed()
     {
+        enemigosVivosEsteNivel--;
+
         // deal with enemy destroyed
+        if (enemigosVivosEsteNivel == 0)
+        {
+            StartCoroutine("EndOfLevelVictory");
+        }
     }
+
+    IEnumerator EndOfLevelVictory()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SoundController.Instance.PlaySoundByIndex(3, this.transform.position);
+        yield return new WaitForSeconds(4.0f);
+        SceneManager.LoadScene("GameScene");
+    }
+
     public virtual void BossDestroyed()
     {
         // deal with the end of a boss battle

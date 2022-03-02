@@ -1325,6 +1325,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 761283532244880294, guid: 2031b8cb897857849bfcda0f706f9f7a, type: 3}
   m_PrefabInstance: {fileID: 82218951}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1187707360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1150076589601245644, guid: 85eb572bed0e9eb4299e48a5d457e8cc, type: 3}
+  m_PrefabInstance: {fileID: 7857960493933682165}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1187707362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187707360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d201d4cdacd8284e905c65809c5f36c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1194868033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1631,21 +1648,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 230582532643792086, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
-      propertyPath: bossGO
-      value: 
-      objectReference: {fileID: 3688652814951868383, guid: 9b3ea7d218960b049a0346d0c452afc1, type: 3}
-    - target: {fileID: 230582532643792086, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
       propertyPath: playerGO
       value: 
       objectReference: {fileID: 7822061}
-    - target: {fileID: 230582532643792086, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
-      propertyPath: talibanGO
-      value: 
-      objectReference: {fileID: 3688652814951868383, guid: 9b3ea7d218960b049a0346d0c452afc1, type: 3}
-    - target: {fileID: 230582532643792086, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
-      propertyPath: enemiesInLevel
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 230582532643792086, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
       propertyPath: portonController
       value: 
@@ -3098,6 +3103,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4328231629569027422, guid: 85eb572bed0e9eb4299e48a5d457e8cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328231629569027422, guid: 85eb572bed0e9eb4299e48a5d457e8cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -27.44
+      objectReference: {fileID: 0}
     - target: {fileID: 6211692226999450212, guid: 85eb572bed0e9eb4299e48a5d457e8cc, type: 3}
       propertyPath: m_Name
       value: ESCENARIOJuegoMesh

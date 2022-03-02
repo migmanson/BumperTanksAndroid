@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour
     public NavMeshAgent agent;
     private Transform player;
     private Animator animatorcontroller;
-    public int lives;
+    public int health;
     public bool exitGarage = false;
     public MeshRenderer foco1;
     public MeshRenderer foco2;
@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        lives = 3;
+        health = 3;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = 7;
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -31,10 +31,8 @@ public class EnemyController : MonoBehaviour
 
     public void ApplyDestination()
     {
-        //agent.SetDestination(player.position);
         controlpoints = GameObject.Find("Controlpoints").GetComponentsInChildren<Transform>();
-        agent.SetDestination(controlpoints[Random.Range(0, controlpoints.Length)].position);
-        //Debug.LogError(agent.destination);
+        agent.SetDestination(controlpoints[Random.Range(0, controlpoints.Length)].position);        
     }
 
 
@@ -58,7 +56,7 @@ public class EnemyController : MonoBehaviour
             }
 
             //Debug.LogError("lives " + lives);
-            if (lives > 0)
+            if (health > 0)
             {
                 animatorcontroller.SetBool("duele", true);
                 Invoke("ResetAnimationHit", 0.2f);
@@ -66,6 +64,8 @@ public class EnemyController : MonoBehaviour
             else
             {
                 animatorcontroller.SetBool("muere", true);
+                SoundController.Instance.PlaySoundByIndex(4, this.transform.position);
+                GameController.Instance.EnemyDestroyed();
                 Destroy(this.gameObject, 3);
             }
         }
@@ -84,7 +84,7 @@ public class EnemyController : MonoBehaviour
             UpdateLives(1);
             //Debug.LogError("lives " + lives + " collider: " + other.name);
 
-            if (lives > 0)
+            if (health > 0)
             {
                 animatorcontroller.SetBool("duele", true);
                 Invoke("ResetAnimationHit", 0.2f);
@@ -106,21 +106,21 @@ public class EnemyController : MonoBehaviour
 
     void UpdateLives(int howManyLost = 1)
     {
-        lives = lives - howManyLost;
+        health = health - howManyLost;
 
-        if (lives == 2)
+        if (health == 2)
         {
             foco1.material = matFocoVerde;
             foco2.material = matFocoVerde;
             foco3.material = matFocoGris;
         }
-        else if (lives == 1)
+        else if (health == 1)
         {
             foco1.material = matFocoVerde;
             foco2.material = matFocoGris;
             foco3.material = matFocoGris;
         }
-        if (lives <= 0)
+        if (health <= 0)
         {
             foco1.material = matFocoGris;
             foco2.material = matFocoGris;
