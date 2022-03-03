@@ -114,6 +114,7 @@ public class UIController : MonoBehaviour
 
     public void PauseToggle()
     {
+        SoundController.Instance.PlaySoundByIndex(0, this.transform.position);
         gameController.Paused = !gameController.Paused;
     }
 

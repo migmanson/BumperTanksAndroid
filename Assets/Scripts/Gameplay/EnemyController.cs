@@ -84,7 +84,7 @@ public class EnemyController : MonoBehaviour
                 Dies();
             }
         }
-        else if (collision.relativeVelocity.magnitude > 8 && collision.transform.tag == "Player")
+        else if (collision.relativeVelocity.magnitude > 7 && collision.transform.tag == "Player")
         {
             // Sonido risa
             SoundController.Instance.PlaySoundByIndex(7, this.transform.position);
