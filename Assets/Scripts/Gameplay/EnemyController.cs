@@ -16,6 +16,10 @@ public class EnemyController : MonoBehaviour
     public Material matFocoGris;
     public bool isDead;
 
+    public GameObject shooter;
+    public GameObject bullet;
+    public float bulletForce = 20;
+
     void Start()
     {
         health = 3;
@@ -28,6 +32,7 @@ public class EnemyController : MonoBehaviour
         foco1.material = matFocoVerde;
         foco2.material = matFocoVerde;
         foco3.material = matFocoVerde;
+        InvokeRepeating("ShootBullet", 5, 5);
     }
 
     public void ApplyDestination()
@@ -36,6 +41,17 @@ public class EnemyController : MonoBehaviour
         agent.SetDestination(controlpoints[Random.Range(0, controlpoints.Length)].position);
     }
 
+
+    void ShootBullet()
+    {
+        // disparo bala
+        GameObject tmpBullet;
+        tmpBullet = Instantiate(bullet, shooter.transform.position, Quaternion.identity);
+        tmpBullet.transform.up = shooter.transform.forward;
+        tmpBullet.GetComponent<Rigidbody>().AddForce(transform.forward *
+                                                    bulletForce,
+                                                    ForceMode.Impulse);        
+    }
 
     void OnCollisionEnter(Collision collision)
     {

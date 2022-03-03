@@ -7,19 +7,23 @@ public class GameController : MonoBehaviour
 
     public static GameController Instance;
     bool paused;
+    bool mainMenu;
+    bool playing;
     public GameObject explosionPrefab;
     public GameObject playerGO;
     public GameObject talibanGO;
     public GameObject bossGO;
     public Animator portonController;
     public int enemigosPorAparecer;
-    public int enemigosVivosEsteNivel;
+    private int enemigosVivosEsteNivel;
+    public int maxEnemigosALaVez;
 
     public void Awake()
     {
         Instance = this;
         Application.targetFrameRate = 60;
         StartCoroutine("KeepAccelerometerAlive");
+        Playing = true;
     }
 
     IEnumerator KeepAccelerometerAlive()
@@ -30,13 +34,17 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        StartGame();
+        if (playing)
+        {
+            StartGame();
+        }
     }
 
     public virtual void PlayerLostLife()
     {
         // deal with player life lost (update U.I. etc.)
     }
+
     public virtual void SpawnPlayer()
     {
         // the player needs to be spawned
@@ -49,6 +57,8 @@ public class GameController : MonoBehaviour
     }
     public virtual void StartGame()
     {
+        UpdateGUIValues();
+        SoundController.Instance.PlaySoundByIndex(10, this.transform.position);
         enemigosVivosEsteNivel = 0;
         // do start game functions
         Invoke("SpawnPlayer", 1);
@@ -56,14 +66,33 @@ public class GameController : MonoBehaviour
         StartCoroutine("SpawnEnemies");
     }
 
+    public virtual void GameOver()
+    {
+        enemigosVivosEsteNivel = 0;
+        StartCoroutine("FinDePartida");
+    }
+
+    IEnumerator FinDePartida()
+    {
+        yield return new WaitForSeconds(3f);
+        SoundController.Instance.PlaySoundByIndex(9, this.transform.position);
+        yield return new WaitForSeconds(4f);
+        UIController.Instance.GoToMainMenu();
+    }
+
     IEnumerator SpawnEnemies()
     {
         yield return new WaitForSeconds(0.3f);
 
-        while (enemigosPorAparecer > 0)
+        while (enemigosPorAparecer > 0 )
         {
 
-            yield return new WaitForSeconds(8f);
+            if (enemigosVivosEsteNivel > maxEnemigosALaVez-1)
+            {
+                yield return new WaitForSeconds(3f);
+                continue;
+            }
+            yield return new WaitForSeconds(4f);
             GameObject enemy = null;
             EnemyController enemyScript;
             // the player needs to be spawned
@@ -84,6 +113,7 @@ public class GameController : MonoBehaviour
             }
             enemigosPorAparecer--;
             enemigosVivosEsteNivel++;
+            UpdateGUIValues();
             portonController.SetTrigger("AbrePorton");
             enemyScript = enemy.GetComponent<EnemyController>();
             //yield return new WaitForSeconds(3f);
@@ -97,7 +127,11 @@ public class GameController : MonoBehaviour
 
         }
         //Debug.LogError("FINISHED SPAWNING ENEMIES ");
+    }
 
+    void UpdateGUIValues()
+    {
+        UIController.Instance.UpdateEnemiesToSpawn(enemigosPorAparecer);
     }
 
 
@@ -164,6 +198,20 @@ public class GameController : MonoBehaviour
                 // unpause Unity
                 Time.timeScale = 1f;
             }
+        }
+    }
+
+    public bool Playing
+    {
+        get
+        {
+            // get paused
+            return playing;
+        }
+        set
+        {
+            // set paused 
+            playing = value;
         }
     }
 }

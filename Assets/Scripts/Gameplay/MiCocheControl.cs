@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class MiCocheControl : MonoBehaviour
 {
@@ -19,21 +20,39 @@ public class MiCocheControl : MonoBehaviour
     public GameObject bullet;
     public float bulletForce = 20;
 
+    public MeshRenderer foco1;
+    public MeshRenderer foco2;
+    public MeshRenderer foco3;
+    public Material matFocoVerde;
+    public Material matFocoGris;
+
     //shake area
     public float umbralShake = 3.5f;
     public float MinShakeInterval;
     private float timeSinceLastShake;
+    public int health;
+    public int lives;
+    public bool isDead;
+    private Vector3 startPos;
 
     private Cinemachine.CinemachineVirtualCamera vcam1;
 
     void Start()
     {
+        lives = 4;
+        health = 3;
+        isDead = false;
+        startPos = transform.position;
         car_Rigidbody = GetComponent<Rigidbody>();
         vcam1 = GameObject.FindObjectOfType<Cinemachine.CinemachineVirtualCamera>();
         vcam1.Follow = this.transform;
         vcam1.LookAt = this.transform;
         sliderR = GameObject.Find("HandleR").GetComponent<Slider>();
         sliderL = GameObject.Find("HandleL").GetComponent<Slider>();
+        foco1.material = matFocoVerde;
+        foco2.material = matFocoVerde;
+        foco3.material = matFocoVerde;
+        UIController.Instance.UpdateHealthP1(lives);
     }
 
     public void GameStart()
@@ -55,10 +74,12 @@ public class MiCocheControl : MonoBehaviour
             signoL = -1;
         }
 
-        // aplico las fuerzas en los laterales del coche chocador, dependiendo del valor de cada slider en pantalla
-        car_Rigidbody.AddForceAtPosition(this.transform.forward * signoR * Mathf.Sqrt(Mathf.Abs(sliderR.value)) * multiplier * Time.deltaTime, fuerzaR.transform.position);
-        car_Rigidbody.AddForceAtPosition(this.transform.forward * signoL * Mathf.Sqrt(Mathf.Abs(sliderL.value)) * multiplier * Time.deltaTime, fuerzaL.transform.position);
-
+        if (!isDead)
+        {
+            // aplico las fuerzas en los laterales del coche chocador, dependiendo del valor de cada slider en pantalla
+            car_Rigidbody.AddForceAtPosition(this.transform.forward * signoR * Mathf.Sqrt(Mathf.Abs(sliderR.value)) * multiplier * Time.deltaTime, fuerzaR.transform.position);
+            car_Rigidbody.AddForceAtPosition(this.transform.forward * signoL * Mathf.Sqrt(Mathf.Abs(sliderL.value)) * multiplier * Time.deltaTime, fuerzaL.transform.position);
+        }
         // activar las particulas solo si el coche camina
         // calcular velocidad del coche
         Vector3 velCoche = car_Rigidbody.GetPointVelocity(transform.TransformPoint(this.transform.position));
@@ -95,7 +116,7 @@ public class MiCocheControl : MonoBehaviour
                                                     ForceMode.Impulse);
         Destroy(tmpBullet.gameObject, 3f);
 
-        // efecto patea hacia atrás
+        // efecto patea hacia atras
         car_Rigidbody.AddForce(-transform.forward * bulletForce * 50, ForceMode.Impulse);
     }
 
@@ -113,6 +134,73 @@ public class MiCocheControl : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         //colisionText.text = (int)collision.relativeVelocity.magnitude + "";
+        if (collision.relativeVelocity.magnitude > 12 && collision.transform.tag == "Columna")
+        {
+            UpdateHealth(1);
+        }
+        if (collision.transform.CompareTag("BulletEnemiga"))
+        {
+            UpdateHealth(1);
+        }
     }
 
+    void UpdateHealth(int howManyLost = 1)
+    {
+        health = health - howManyLost;
+
+        if (health == 2)
+        {
+            foco1.material = matFocoVerde;
+            foco2.material = matFocoVerde;
+            foco3.material = matFocoGris;
+            SoundController.Instance.PlaySoundByIndex(11, this.transform.position);
+            
+        }
+        else if (health == 1)
+        {
+            foco1.material = matFocoVerde;
+            foco2.material = matFocoGris;
+            foco3.material = matFocoGris;
+            SoundController.Instance.PlaySoundByIndex(11, this.transform.position);
+        }
+        if (health <= 0)
+        {
+            foco1.material = matFocoGris;
+            foco2.material = matFocoGris;
+            foco3.material = matFocoGris;
+            PlayerDies();
+        }
+    }
+
+    void PlayerDies()
+    {
+        if (!isDead)
+        {
+            lives--;
+            isDead = true;
+            SoundController.Instance.PlaySoundByIndex(8, this.transform.position);
+            GameController.Instance.PlayerLostLife();
+            if (lives > 0)
+            {
+                StartCoroutine("RespawnPlayer");
+            }
+            else {
+                GameController.Instance.GameOver();
+                UIController.Instance.UpdateHealthP1(lives);
+            }
+        }
+    }
+
+    IEnumerator RespawnPlayer()
+    {
+        yield return new WaitForSeconds(3);
+        UIController.Instance.UpdateHealthP1(lives);
+        transform.position = startPos;
+        foco1.material = matFocoVerde;
+        foco2.material = matFocoVerde;
+        foco3.material = matFocoVerde;
+        health = 3;
+        yield return new WaitForSeconds(1);
+        isDead = false;
+    }
 }

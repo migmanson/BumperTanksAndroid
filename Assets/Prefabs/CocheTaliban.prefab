@@ -4911,13 +4911,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   agent: {fileID: 899113663}
-  lives: 0
+  health: 0
   exitGarage: 0
   foco1: {fileID: 7974861964551178905}
   foco2: {fileID: 365614463718531378}
   foco3: {fileID: 2741299990800610245}
   matFocoVerde: {fileID: 2100000, guid: 52c3fabfe079f654e8b76c9990e9f585, type: 2}
   matFocoGris: {fileID: 2100000, guid: 4277a984a25c85a46be5da4a73550a31, type: 2}
+  isDead: 0
+  shooter: {fileID: 1306958696}
+  bullet: {fileID: 8224683782363943662, guid: 6765f9172e86044f9b019fa529d4bde9, type: 3}
+  bulletForce: 20
 --- !u!1 &3688652816393459246
 GameObject:
   m_ObjectHideFlags: 0
@@ -5139,7 +5143,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 264c252ade6d9094499b5497980dce51, type: 2}
+  - {fileID: 2100000, guid: 52c3fabfe079f654e8b76c9990e9f585, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5220,7 +5224,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4277a984a25c85a46be5da4a73550a31, type: 2}
+  - {fileID: 2100000, guid: 52c3fabfe079f654e8b76c9990e9f585, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
