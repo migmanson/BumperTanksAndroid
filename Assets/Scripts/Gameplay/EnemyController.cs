@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
     public MeshRenderer foco3;
     public Material matFocoVerde;
     public Material matFocoGris;
-    private bool isDead;
+    public bool isDead;
 
     void Start()
     {

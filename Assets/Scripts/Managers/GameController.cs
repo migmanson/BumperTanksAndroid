@@ -87,7 +87,7 @@ public class GameController : MonoBehaviour
             portonController.SetTrigger("AbrePorton");
             enemyScript = enemy.GetComponent<EnemyController>();
             //yield return new WaitForSeconds(3f);
-            while (!enemyScript.exitGarage && enemyScript.health >= 0)
+            while (!enemyScript.exitGarage && !enemyScript.isDead)
             {
                 yield return new WaitForSeconds(0.25f);
             }
@@ -119,7 +119,7 @@ public class GameController : MonoBehaviour
         enemigosVivosEsteNivel--;
 
         // deal with enemy destroyed
-        if (enemigosVivosEsteNivel == 0)
+        if (enemigosVivosEsteNivel == 0 && enemigosPorAparecer == 0)
         {
             StartCoroutine("EndOfLevelVictory");
         }
