@@ -371,8 +371,10 @@ MonoBehaviour:
   matFocoVerde: {fileID: 2100000, guid: 52c3fabfe079f654e8b76c9990e9f585, type: 2}
   matFocoGris: {fileID: 2100000, guid: 4277a984a25c85a46be5da4a73550a31, type: 2}
   umbralShake: 2.5
-  MinShakeInterval: 0.5
+  MinShakeInterval: 0.75
   health: 0
+  lives: 0
+  isDead: 0
 --- !u!1 &2769824591606469065
 GameObject:
   m_ObjectHideFlags: 0

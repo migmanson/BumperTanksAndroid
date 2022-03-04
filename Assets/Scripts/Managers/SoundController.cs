@@ -23,7 +23,9 @@ public class SoundController : MonoBehaviour
         }
         else
         {
-            volume = 1;
+            PlayerPrefs.SetFloat("SFXVol", 1.0f);
+            PlayerPrefs.Save();
+            volume = PlayerPrefs.GetFloat("SFXVol");
         }
     
         soundObjectList = new ArrayList();
@@ -32,6 +34,8 @@ public class SoundController : MonoBehaviour
         foreach (AudioClip theSound in GameSounds)
         {
             tempSoundObj = new SoundObject(theSound, theSound.name, volume);
+            DontDestroyOnLoad(tempSoundObj.sourceGO);
+            tempSoundObj.sourceGO.transform.parent = this.transform.parent;
             soundObjectList.Add(tempSoundObj);
             totalSounds++;
         }

@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     public Material matFocoVerde;
     public Material matFocoGris;
     public bool isDead;
+    public bool dest;
 
     public GameObject shooter;
     public GameObject bullet;
@@ -37,20 +38,28 @@ public class EnemyController : MonoBehaviour
 
     public void ApplyDestination()
     {
-        controlpoints = GameObject.Find("Controlpoints").GetComponentsInChildren<Transform>();
-        agent.SetDestination(controlpoints[Random.Range(0, controlpoints.Length)].position);
+        if (!isDead)
+        {
+            if (controlpoints.Length == 0)
+            {
+                controlpoints = GameObject.Find("Controlpoints").GetComponentsInChildren<Transform>();
+            }
+            agent.SetDestination(controlpoints[Random.Range(0, controlpoints.Length)].position);
+        }
     }
-
 
     void ShootBullet()
     {
-        // disparo bala
-        GameObject tmpBullet;
-        tmpBullet = Instantiate(bullet, shooter.transform.position, Quaternion.identity);
-        tmpBullet.transform.up = shooter.transform.forward;
-        tmpBullet.GetComponent<Rigidbody>().AddForce(transform.forward *
-                                                    bulletForce,
-                                                    ForceMode.Impulse);        
+        if (!isDead)
+        {
+            // disparo bala
+            GameObject tmpBullet;
+            tmpBullet = Instantiate(bullet, shooter.transform.position, Quaternion.identity);
+            tmpBullet.transform.up = shooter.transform.forward;
+            tmpBullet.GetComponent<Rigidbody>().AddForce(transform.forward *
+                                                        bulletForce,
+                                                        ForceMode.Impulse);
+        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -61,6 +70,8 @@ public class EnemyController : MonoBehaviour
             // Debug.LogError("lives " + lives + " collision: " + collision.collider.name);
             if (collision.relativeVelocity.magnitude > 20)
             {
+                //sonido delicious
+                Grid.sfx.PlaySoundByIndex(13, this.transform.position);
                 UpdateLives(3);
             }
             else if (collision.relativeVelocity.magnitude > 15)
@@ -75,8 +86,9 @@ public class EnemyController : MonoBehaviour
             //Debug.LogError("lives " + lives);
             if (health > 0)
             {
+                //sonido daño
+                Grid.sfx.PlaySoundByIndex(5, this.transform.position);
                 animatorcontroller.SetBool("duele", true);
-                SoundController.Instance.PlaySoundByIndex(5, this.transform.position);
                 Invoke("ResetAnimationHit", 0.2f);
             }
             else
@@ -84,10 +96,10 @@ public class EnemyController : MonoBehaviour
                 Dies();
             }
         }
-        else if (collision.relativeVelocity.magnitude > 7 && collision.transform.tag == "Player")
+        else if (collision.relativeVelocity.magnitude > 7 && collision.transform.tag == "Player" && health > 0)
         {
             // Sonido risa
-            SoundController.Instance.PlaySoundByIndex(7, this.transform.position);
+            Grid.sfx.PlaySoundByIndex(7, this.transform.position);
         }
 
     }
@@ -107,8 +119,9 @@ public class EnemyController : MonoBehaviour
 
             if (health > 0)
             {
+                // sonido chilla
+                Grid.sfx.PlaySoundByIndex(6, this.transform.position);
                 animatorcontroller.SetBool("duele", true);
-                SoundController.Instance.PlaySoundByIndex(6, this.transform.position);
                 Invoke("ResetAnimationHit", 0.2f);
             }
             else
@@ -152,11 +165,12 @@ public class EnemyController : MonoBehaviour
     {
         if (!isDead)
         {
+            agent.destination = this.transform.position;
             isDead = true;
             animatorcontroller.SetBool("muere", true);
-            SoundController.Instance.PlaySoundByIndex(4, this.transform.position);
+            Grid.sfx.PlaySoundByIndex(4, this.transform.position);
             GameController.Instance.EnemyDestroyed();
-            Destroy(this.gameObject, 2.5f);            
+            Destroy(this.gameObject, 2.5f);
         }
     }
 }

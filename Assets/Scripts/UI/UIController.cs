@@ -33,11 +33,12 @@ public class UIController : MonoBehaviour
             player_highscore = player_score;
     }
 
-    public void UpdateHealthP1(int alifeNum)
+    public void UpdateHealthP1()
     {
-        player_lives = alifeNum;
+        player_lives = Grid.playerStats.GetLives();
+        Debug.LogError("update lives: " + player_lives + " and LEVEL: " + Grid.game.GetLevel());
 
-        switch (alifeNum)
+        switch (player_lives)
         {
             case 4:
                 {
@@ -114,7 +115,7 @@ public class UIController : MonoBehaviour
 
     public void PauseToggle()
     {
-        SoundController.Instance.PlaySoundByIndex(0, this.transform.position);
+        Grid.sfx.PlaySoundByIndex(0, this.transform.position);
         gameController.Paused = !gameController.Paused;
     }
 
@@ -125,12 +126,13 @@ public class UIController : MonoBehaviour
 
     IEnumerator LoadGame()
     {
-        GameObject.Find("CanvasMainMenu").transform.GetComponent<AudioSource>().Stop();
-        SoundController.Instance.PlaySoundByIndex(12, this.transform.position);
+        //GameObject.Find("CanvasMainMenu").transform.GetComponent<AudioSource>().Stop();
+        //Grid.sfx.PlaySoundByIndex(12, this.transform.position);
+        Grid.sfx.PlaySoundByIndex(12, this.transform.position);
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
-        gameController.Playing = true;
-        gameController.StartGame();
+        //gameController.Playing = true;
+        //gameController.StartGame();
     }
 
 public void GoToMainMenu()

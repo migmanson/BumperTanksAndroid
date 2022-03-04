@@ -4905,11 +4905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3296bfa8f7ee7064b8a527618e27cdc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlpoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  controlpoints: []
   agent: {fileID: 899113663}
   health: 0
   exitGarage: 0
@@ -4919,6 +4915,7 @@ MonoBehaviour:
   matFocoVerde: {fileID: 2100000, guid: 52c3fabfe079f654e8b76c9990e9f585, type: 2}
   matFocoGris: {fileID: 2100000, guid: 4277a984a25c85a46be5da4a73550a31, type: 2}
   isDead: 0
+  dest: 0
   shooter: {fileID: 1306958696}
   bullet: {fileID: 8224683782363943662, guid: 6765f9172e86044f9b019fa529d4bde9, type: 3}
   bulletForce: 20

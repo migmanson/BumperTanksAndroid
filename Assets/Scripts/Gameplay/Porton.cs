@@ -8,7 +8,7 @@ public class Porton : MonoBehaviour
         if (collision.relativeVelocity.magnitude > 6)
         {
             // choque FUERTE
-            SoundController.Instance.PlaySoundByIndex(2, this.transform.position);
+            Grid.sfx.PlaySoundByIndex(2, this.transform.position);
 
             if (collision.transform.tag == "Player" && GameController.Instance.enemigosPorAparecer <= 0)
                 StartCoroutine("AbrePorton");
@@ -16,7 +16,7 @@ public class Porton : MonoBehaviour
         else if (collision.relativeVelocity.magnitude > 3)
         {
             // choque LEVE
-            SoundController.Instance.PlaySoundByIndex(1, this.transform.position);
+            Grid.sfx.PlaySoundByIndex(1, this.transform.position);
         }
     }
 

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 230582532643792081}
   - component: {fileID: 230582532643792086}
   - component: {fileID: 230582532643792093}
-  - component: {fileID: 230582532643792083}
   - component: {fileID: 230582532643792080}
   - component: {fileID: 230582532643792082}
   m_Layer: 0
@@ -52,8 +51,8 @@ MonoBehaviour:
   talibanGO: {fileID: 3688652814951868383, guid: 9b3ea7d218960b049a0346d0c452afc1, type: 3}
   bossGO: {fileID: 3688652814951868383, guid: 9b3ea7d218960b049a0346d0c452afc1, type: 3}
   portonController: {fileID: 0}
-  enemigosPorAparecer: 15
-  maxEnemigosALaVez: 5
+  enemigosPorAparecer: 10
+  maxEnemigosALaVez: 6
 --- !u!114 &230582532643792093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,33 +67,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   didInit: 0
   DataManager: {fileID: 0}
---- !u!114 &230582532643792083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 230582532643792087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c49a5c76befa13499af088c0ea941da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameSounds:
-  - {fileID: 8300000, guid: 6a1eb2a66af994e62a2a4827466b0525, type: 3}
-  - {fileID: 8300000, guid: 8607df1aab82e8f40b0f04459db8bafd, type: 3}
-  - {fileID: 8300000, guid: 444d53089a16fe9478965cae7f79113b, type: 3}
-  - {fileID: 8300000, guid: 52636a958d0512645876a062d1eaab61, type: 3}
-  - {fileID: 8300000, guid: df26e01c916149e44afd3c5ee794b476, type: 3}
-  - {fileID: 8300000, guid: f8f4ad44fdef14efe95419d8c6823cec, type: 3}
-  - {fileID: 8300000, guid: 774af3354b3391d42ae01287896e52bd, type: 3}
-  - {fileID: 8300000, guid: 8f1f0323dc6c53446bb21b460d58ac26, type: 3}
-  - {fileID: 8300000, guid: 8a70f174c78704ae387988c97f4538cd, type: 3}
-  - {fileID: 8300000, guid: 36f3c935850ba415a9f4346aa9360f8d, type: 3}
-  - {fileID: 8300000, guid: d56f1b02028804bb4aae920c9e13bee6, type: 3}
-  - {fileID: 8300000, guid: 012d725b04eb99c47a580e102c6d7452, type: 3}
-  - {fileID: 8300000, guid: 8936b779a2afa4f56a34ff885cc6673f, type: 3}
-  volume: 1
 --- !u!114 &230582532643792080
 MonoBehaviour:
   m_ObjectHideFlags: 0

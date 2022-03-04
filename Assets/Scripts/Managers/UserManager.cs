@@ -8,17 +8,17 @@ public class UserManager : MonoBehaviour
     // or invalid data coming in
     private int score;
     private int highScore;
-    private int level;
     private int health;
+    private int lives;
     private bool isFinished;
     // this is the display name of the player
     public string playerName = "Anon";
-    public virtual void GetDefaultData()
+    public virtual void GetDefaultPlayerData()
     {
         playerName = "Anon";
         score = 0;
-        level = 1;
         health = 3;
+        lives = 4;
         highScore = 0;
         isFinished = false;
     }
@@ -29,14 +29,6 @@ public class UserManager : MonoBehaviour
     public void SetName(string aName)
     {
         playerName = aName;
-    }
-    public int GetLevel()
-    {
-        return level;
-    }
-    public void SetLevel(int num)
-    {
-        level = num;
     }
     public int GetHighScore()
     {
@@ -73,11 +65,29 @@ public class UserManager : MonoBehaviour
     {
         health -= num;
     }
-
     public void SetHealth(int num)
     {
         health = num;
     }
+
+    public int GetLives()
+    {
+        return lives;
+    }
+    public void AddLives(int num)
+    {
+        lives += num;
+    }
+    public void ReduceLives(int num)
+    {
+        lives -= num;
+    }
+    public void SetLives(int num)
+    {
+        lives = num;
+    }
+
+
     public bool GetIsFinished()
     {
         return isFinished;

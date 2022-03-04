@@ -14,7 +14,7 @@ public class MiCocheControl : MonoBehaviour
     public Slider sliderL;
     public ParticleSystem chispas;
     bool particlesPlay = false;
-    public TMPro.TextMeshProUGUI colisionText;
+    //public TMPro.TextMeshProUGUI colisionText;
 
     public GameObject shooter;
     public GameObject bullet;
@@ -39,7 +39,7 @@ public class MiCocheControl : MonoBehaviour
 
     void Start()
     {
-        lives = 4;
+        lives = Grid.playerStats.GetLives();
         health = 3;
         isDead = false;
         startPos = transform.position;
@@ -52,7 +52,7 @@ public class MiCocheControl : MonoBehaviour
         foco1.material = matFocoVerde;
         foco2.material = matFocoVerde;
         foco3.material = matFocoVerde;
-        UIController.Instance.UpdateHealthP1(lives);
+        UIController.Instance.UpdateHealthP1();
     }
 
     public void GameStart()
@@ -97,27 +97,29 @@ public class MiCocheControl : MonoBehaviour
         //Debug.LogError(" shake !!! ! ! !  " + Input.acceleration.sqrMagnitude + "   " + umbralShake);
 
         // Shake al telefono, dispara una bala
-        if (Input.acceleration.sqrMagnitude >= umbralShake
-            && Time.unscaledTime >= timeSinceLastShake + MinShakeInterval)
+        if (Input.acceleration.sqrMagnitude >= umbralShake)
         {
-            timeSinceLastShake = Time.unscaledTime;
             ShootBullet();
-        }
+        }        
     }
 
-    void ShootBullet()
+    public void ShootBullet()
     {
-        // disparo bala
-        GameObject tmpBullet;
-        tmpBullet = Instantiate(bullet, shooter.transform.position, Quaternion.identity);
-        tmpBullet.transform.up = shooter.transform.forward;
-        tmpBullet.GetComponent<Rigidbody>().AddForce(transform.forward *
-                                                    bulletForce,
-                                                    ForceMode.Impulse);
-        Destroy(tmpBullet.gameObject, 3f);
+        if (!isDead && !GameController.Instance.Paused && Time.unscaledTime >= timeSinceLastShake + MinShakeInterval)
+        {
+            timeSinceLastShake = Time.unscaledTime;
+            // disparo bala
+            GameObject tmpBullet;
+            tmpBullet = Instantiate(bullet, shooter.transform.position, Quaternion.identity);
+            tmpBullet.transform.up = shooter.transform.forward;
+            tmpBullet.GetComponent<Rigidbody>().AddForce(transform.forward *
+                                                        bulletForce,
+                                                        ForceMode.Impulse);
+            Destroy(tmpBullet.gameObject, 3f);
 
-        // efecto patea hacia atras
-        car_Rigidbody.AddForce(-transform.forward * bulletForce * 50, ForceMode.Impulse);
+            // efecto patea hacia atras
+            car_Rigidbody.AddForce(-transform.forward * bulletForce * 75, ForceMode.Impulse);
+        }
     }
 
     void PlayChispas()
@@ -153,40 +155,41 @@ public class MiCocheControl : MonoBehaviour
             foco1.material = matFocoVerde;
             foco2.material = matFocoVerde;
             foco3.material = matFocoGris;
-            SoundController.Instance.PlaySoundByIndex(11, this.transform.position);
-            
+            Grid.sfx.PlaySoundByIndex(11, this.transform.position);
+
         }
         else if (health == 1)
         {
             foco1.material = matFocoVerde;
             foco2.material = matFocoGris;
             foco3.material = matFocoGris;
-            SoundController.Instance.PlaySoundByIndex(11, this.transform.position);
+            Grid.sfx.PlaySoundByIndex(11, this.transform.position);
         }
         if (health <= 0)
         {
             foco1.material = matFocoGris;
             foco2.material = matFocoGris;
             foco3.material = matFocoGris;
-            PlayerDies();
+            PlayerLosesLife();
         }
     }
 
-    void PlayerDies()
+    void PlayerLosesLife()
     {
         if (!isDead)
         {
             lives--;
             isDead = true;
-            SoundController.Instance.PlaySoundByIndex(8, this.transform.position);
+            Grid.sfx.PlaySoundByIndex(8, this.transform.position);
             GameController.Instance.PlayerLostLife();
             if (lives > 0)
             {
                 StartCoroutine("RespawnPlayer");
             }
-            else {
-                GameController.Instance.GameOver();
-                UIController.Instance.UpdateHealthP1(lives);
+            else
+            {
+                GameController.Instance.TerminarPartida();
+                UIController.Instance.UpdateHealthP1();
             }
         }
     }
@@ -194,7 +197,7 @@ public class MiCocheControl : MonoBehaviour
     IEnumerator RespawnPlayer()
     {
         yield return new WaitForSeconds(3);
-        UIController.Instance.UpdateHealthP1(lives);
+        UIController.Instance.UpdateHealthP1();
         transform.position = startPos;
         foco1.material = matFocoVerde;
         foco2.material = matFocoVerde;

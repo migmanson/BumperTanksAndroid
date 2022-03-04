@@ -26,7 +26,7 @@ AudioImporter:
       quality: 0.79999995
       conversionMode: 0
   forceToMono: 1
-  normalize: 1
+  normalize: 0
   preloadAudioData: 1
   loadInBackground: 0
   ambisonic: 0
