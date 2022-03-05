@@ -36,7 +36,7 @@ public class UIController : MonoBehaviour
     public void UpdateHealthP1()
     {
         player_lives = Grid.playerStats.GetLives();
-        Debug.LogError("update lives: " + player_lives + " and LEVEL: " + Grid.game.GetLevel());
+        //Debug.LogError("update lives: " + player_lives + " and LEVEL: " + Grid.game.GetLevel());
 
         switch (player_lives)
         {

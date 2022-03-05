@@ -1502,7 +1502,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653369487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.43, y: 0, z: 11.17}
+  m_LocalPosition: {x: 21.26, y: 0, z: 10.75}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 538452503}
@@ -2338,7 +2338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401820969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.06, y: 0, z: 17.16}
+  m_LocalPosition: {x: -26.47, y: 0, z: 16.32}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 538452503}
@@ -2368,7 +2368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434805393}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.24, y: 0, z: -12.86}
+  m_LocalPosition: {x: 19.54, y: 0, z: -11.04}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 538452503}
@@ -3017,6 +3017,114 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2052707592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2052707593}
+  - component: {fileID: 2052707598}
+  - component: {fileID: 2052707597}
+  - component: {fileID: 2052707596}
+  - component: {fileID: 2052707594}
+  m_Layer: 15
+  m_Name: Barrera BumperA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &2052707593
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052707592}
+  m_LocalRotation: {x: 0.000000031173528, y: 0.92387956, z: -0.00000007525955, w: 0.38268346}
+  m_LocalPosition: {x: -48.140186, y: 0.2499971, z: -1.7771649}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1035246876136046606}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2052707598
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052707592}
+  m_Mesh: {fileID: 648123385765523596, guid: fd73751e543005349b3c0bf50f852fd8, type: 3}
+--- !u!23 &2052707597
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052707592}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0dae6466f84f43c4a85e4e48759435b2, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2052707596
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052707592}
+  m_Material: {fileID: 13400000, guid: 52baaeb214519f347a35cf0edfd262ff, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 2, z: 0.25}
+  m_Center: {x: 1.4210856e-15, y: 0.5, z: -0.04}
+--- !u!114 &2052707594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052707592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aebcbedb4f105864ab8ae3813062cf27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2128172853
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,7 +3149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128172853}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.3756, y: 0, z: -11.5561}
+  m_LocalPosition: {x: -20.7, y: 0, z: -12.34}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 538452503}
@@ -5708,7 +5816,7 @@ GameObject:
   - component: {fileID: 6125757977709125552}
   - component: {fileID: 8781518979769658779}
   m_Layer: 15
-  m_Name: Barrera Bumper16
+  m_Name: Barrera Bumper16 C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5788,8 +5896,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 47.91, y: 2, z: 0.25}
-  m_Center: {x: 0, y: 0.5, z: 0.125}
+  m_Size: {x: 42.2, y: 2, z: 0.25}
+  m_Center: {x: 2.6, y: 0.5, z: 0.125}
 --- !u!1 &2617863237314834696
 GameObject:
   m_ObjectHideFlags: 0
@@ -6999,9 +7107,10 @@ GameObject:
   - component: {fileID: 4784178375639728267}
   - component: {fileID: 3620953181972446236}
   - component: {fileID: 6313933052132312264}
-  - component: {fileID: 7667130865110046700}
-  m_Layer: 15
-  m_Name: Barrera Bumper026
+  - component: {fileID: 7857960493933682167}
+  - component: {fileID: 5579479005310349392}
+  m_Layer: 10
+  m_Name: Barrera Alumnas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7019,7 +7128,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1035246876136046606}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3620953181972446236
 MeshFilter:
@@ -7070,19 +7179,31 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7667130865110046700
+--- !u!65 &7857960493933682167
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3499906163053862603}
-  m_Material: {fileID: 13400000, guid: 52baaeb214519f347a35cf0edfd262ff, type: 2}
-  m_IsTrigger: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 2, z: 0.25}
-  m_Center: {x: 1.4210856e-15, y: 0.5, z: 0.125}
+  m_Size: {x: 3.67, y: 3, z: 3}
+  m_Center: {x: 1.4210856e-15, y: 0.98, z: -1.29}
+--- !u!114 &5579479005310349392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3499906163053862603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aebcbedb4f105864ab8ae3813062cf27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3578072911502413863
 GameObject:
   m_ObjectHideFlags: 0
@@ -7339,7 +7460,7 @@ GameObject:
   - component: {fileID: 8351456974833511256}
   - component: {fileID: 8028943063423982069}
   m_Layer: 15
-  m_Name: Barrera Bumper023
+  m_Name: Barrera Bumper023 C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7420,7 +7541,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 27, y: 2, z: 0.25}
-  m_Center: {x: 0, y: 0.5, z: 0.125}
+  m_Center: {x: 5.13, y: 0.5, z: 0.125}
 --- !u!1 &3939365395477018669
 GameObject:
   m_ObjectHideFlags: 0
@@ -7758,7 +7879,7 @@ GameObject:
   - component: {fileID: 5630706027419286654}
   - component: {fileID: 6972969744399144541}
   m_Layer: 15
-  m_Name: Barrera Bumper00
+  m_Name: Barrera Bumper00 C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7934,7 +8055,7 @@ GameObject:
   - component: {fileID: 1041270817659706884}
   - component: {fileID: 6946962751483997553}
   m_Layer: 15
-  m_Name: Barrera Bumper04
+  m_Name: Barrera Bumper04 C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12515,7 +12636,7 @@ GameObject:
   - component: {fileID: 4677206612658945649}
   - component: {fileID: 3916746692697036159}
   m_Layer: 15
-  m_Name: Barrera Bumper025
+  m_Name: Barrera Bumper025 C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13343,6 +13464,7 @@ Transform:
   - {fileID: 8255533996452836130}
   - {fileID: 8813974577401176295}
   - {fileID: 647237638069530255}
+  - {fileID: 2052707593}
   - {fileID: 4784178375639728267}
   m_Father: {fileID: 6737259182806474974}
   m_RootOrder: 0
@@ -13441,7 +13563,7 @@ GameObject:
   - component: {fileID: 2083607708866667359}
   - component: {fileID: 2411608999341028302}
   m_Layer: 15
-  m_Name: Barrera Bumper11
+  m_Name: Barrera Bumper11 C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13751,16 +13873,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a14a1ce69311e649850375f3a9841c7, type: 3}
---- !u!1 &7047144672465195871 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6a14a1ce69311e649850375f3a9841c7, type: 3}
-  m_PrefabInstance: {fileID: 7857960495194451470}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7676293285763303909 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6a14a1ce69311e649850375f3a9841c7, type: 3}
-  m_PrefabInstance: {fileID: 7857960495194451470}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1150076589601245644 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2091655947302541374, guid: 6a14a1ce69311e649850375f3a9841c7, type: 3}
@@ -13769,6 +13881,16 @@ GameObject:
 --- !u!1 &3374462271392926198 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4334315650604636168, guid: 6a14a1ce69311e649850375f3a9841c7, type: 3}
+  m_PrefabInstance: {fileID: 7857960495194451470}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7676293285763303909 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6a14a1ce69311e649850375f3a9841c7, type: 3}
+  m_PrefabInstance: {fileID: 7857960495194451470}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7047144672465195871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6a14a1ce69311e649850375f3a9841c7, type: 3}
   m_PrefabInstance: {fileID: 7857960495194451470}
   m_PrefabAsset: {fileID: 0}
 --- !u!65 &362572656

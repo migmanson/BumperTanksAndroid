@@ -74,7 +74,7 @@ public class MiCocheControl : MonoBehaviour
             signoL = -1;
         }
 
-        if (!isDead)
+        if (!isDead && !Grid.game.GetNivelTerminado())
         {
             // aplico las fuerzas en los laterales del coche chocador, dependiendo del valor de cada slider en pantalla
             car_Rigidbody.AddForceAtPosition(this.transform.forward * signoR * Mathf.Sqrt(Mathf.Abs(sliderR.value)) * multiplier * Time.deltaTime, fuerzaR.transform.position);
@@ -105,7 +105,7 @@ public class MiCocheControl : MonoBehaviour
 
     public void ShootBullet()
     {
-        if (!isDead && !GameController.Instance.Paused && Time.unscaledTime >= timeSinceLastShake + MinShakeInterval)
+        if (!isDead && !GameController.Instance.Paused && Time.unscaledTime >= timeSinceLastShake + MinShakeInterval && !Grid.game.GetNivelTerminado())
         {
             timeSinceLastShake = Time.unscaledTime;
             // disparo bala
@@ -140,7 +140,7 @@ public class MiCocheControl : MonoBehaviour
         {
             UpdateHealth(1);
         }
-        if (collision.transform.CompareTag("BulletEnemiga"))
+        if (collision.transform.CompareTag("BulletEnemiga") && !Grid.game.GetNivelTerminado())
         {
             UpdateHealth(1);
         }
@@ -179,7 +179,7 @@ public class MiCocheControl : MonoBehaviour
         if (!isDead)
         {
             lives--;
-            isDead = true;
+            isDead = true;            
             Grid.sfx.PlaySoundByIndex(8, this.transform.position);
             GameController.Instance.PlayerLostLife();
             if (lives > 0)

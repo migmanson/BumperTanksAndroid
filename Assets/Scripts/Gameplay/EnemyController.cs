@@ -72,15 +72,15 @@ public class EnemyController : MonoBehaviour
             {
                 //sonido delicious
                 Grid.sfx.PlaySoundByIndex(13, this.transform.position);
-                UpdateLives(3);
+                UpdateEnemyHealth(3);
             }
             else if (collision.relativeVelocity.magnitude > 15)
             {
-                UpdateLives(2);
+                UpdateEnemyHealth(2);
             }
             else
             {
-                UpdateLives(1);
+                UpdateEnemyHealth(1);
             }
 
             //Debug.LogError("lives " + lives);
@@ -114,8 +114,7 @@ public class EnemyController : MonoBehaviour
         if (other.tag == "Bullet")
         {
             // colision con la bala
-            UpdateLives(1);
-            //Debug.LogError("lives " + lives + " collider: " + other.name);
+            UpdateEnemyHealth(1);
 
             if (health > 0)
             {
@@ -134,10 +133,14 @@ public class EnemyController : MonoBehaviour
             exitGarage = true;
             agent.speed = 4;
             InvokeRepeating("ApplyDestination", 0, 4.0f);
+        } else if (other.transform.name == "Barrera Alumnas" && !isDead && !Grid.game.GetNivelTerminado())
+        {
+            agent.destination = this.transform.position;
+            GameController.Instance.AlumnasCapturadas();
         }
     }
 
-    void UpdateLives(int howManyLost = 1)
+    void UpdateEnemyHealth(int howManyLost = 1)
     {
         health = health - howManyLost;
 
@@ -165,8 +168,8 @@ public class EnemyController : MonoBehaviour
     {
         if (!isDead)
         {
-            agent.destination = this.transform.position;
             isDead = true;
+            agent.destination = this.transform.position;
             animatorcontroller.SetBool("muere", true);
             Grid.sfx.PlaySoundByIndex(4, this.transform.position);
             GameController.Instance.EnemyDestroyed();

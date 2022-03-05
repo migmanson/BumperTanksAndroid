@@ -193,6 +193,14 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
+    public virtual void AlumnasCapturadas()
+    {
+        Grid.playerStats.SetIsFinished(true);
+        Grid.sfx.PlaySoundByIndex(14, this.transform.position);
+        Debug.LogError("ALUMNAS CAPTURADAS !!!!!!!!!!!!!!!!");
+        TerminarPartida();
+    }
+
     public virtual void BossDestroyed()
     {
         // deal with the end of a boss battle
