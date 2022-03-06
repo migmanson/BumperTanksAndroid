@@ -8,6 +8,9 @@ TagManager:
   - Bullet
   - Columna
   - BulletEnemiga
+  - CocheTaliban
+  - FxTemporaire
+  - Granada
   layers:
   - Default
   - TransparentFX
@@ -25,7 +28,7 @@ TagManager:
   - TriggerTalibanExit
   - BulletEnemiga
   - BarrerasEscenario
-  - 
+  - Granada
   - 
   - 
   - 

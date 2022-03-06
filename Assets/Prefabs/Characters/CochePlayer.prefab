@@ -361,20 +361,23 @@ MonoBehaviour:
   sliderR: {fileID: 0}
   sliderL: {fileID: 0}
   chispas: {fileID: 3133592147554900195}
-  colisionText: {fileID: 0}
   shooter: {fileID: 80157180}
   bullet: {fileID: 8224683782363943662, guid: 4220caab821e96d4db6baac9d33a116a, type: 3}
   bulletForce: 20
+  granadaPrefab: {fileID: 180572453118077732, guid: 5b1655942ce0851498b52d997f113034, type: 3}
+  granadaForce: 10
   foco1: {fileID: 5783217492048724482}
   foco2: {fileID: 4266001168095472247}
   foco3: {fileID: 2232109126491129504}
   matFocoVerde: {fileID: 2100000, guid: 52c3fabfe079f654e8b76c9990e9f585, type: 2}
   matFocoGris: {fileID: 2100000, guid: 4277a984a25c85a46be5da4a73550a31, type: 2}
   umbralShake: 2.5
-  MinShakeInterval: 0.75
+  MinShakeInterval: 1
   health: 0
   lives: 0
   isDead: 0
+  isInvincible: 0
+  isPupGranada: 0
 --- !u!1 &2769824591606469065
 GameObject:
   m_ObjectHideFlags: 0

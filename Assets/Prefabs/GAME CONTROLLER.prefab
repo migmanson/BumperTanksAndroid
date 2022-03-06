@@ -96,6 +96,9 @@ MonoBehaviour:
   player_lives: 0
   player_highscore: 0
   enemiesToSpawn: {fileID: 0}
+  powerUpImg1: {fileID: 0}
+  powerUpImg2: {fileID: 0}
+  powerUpImg3: {fileID: 0}
   life1: {fileID: 0}
   life2: {fileID: 0}
   life3: {fileID: 0}

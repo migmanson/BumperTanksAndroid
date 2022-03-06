@@ -24,7 +24,7 @@ SpriteAtlasAsset:
     platformSettings:
     - serializedVersion: 3
       m_BuildTarget: Android
-      m_MaxTextureSize: 2048
+      m_MaxTextureSize: 1024
       m_ResizeAlgorithm: 0
       m_TextureFormat: 47
       m_TextureCompression: 1
@@ -59,11 +59,8 @@ SpriteAtlasAsset:
     - {fileID: 2800000, guid: d5d817e9665f9b842ae9d1ef1bd44d5e, type: 3}
     - {fileID: 2800000, guid: 27caf30bbf197174a81ccafaeaa7fa47, type: 3}
     - {fileID: 2800000, guid: f87768c2927e2844e8af51363b6164b2, type: 3}
-    - {fileID: 2800000, guid: 0d55367c656b9d64095754570045f31a, type: 3}
-    - {fileID: 2800000, guid: ac76fddb7664f654797955bb0666f402, type: 3}
-    - {fileID: 2800000, guid: 2dacbcec591715640bb4deee3129f4cc, type: 3}
-    - {fileID: 2800000, guid: 66d73be9671d79240bad1241a0f20325, type: 3}
-    totalSpriteSurfaceArea: 0
+    - {fileID: 2800000, guid: 082133e7fec7dc24db77ff3e75ae2c4c, type: 3}
+    - {fileID: 2800000, guid: 6c9f78db3ebd1a14a9b918b2da2a2db8, type: 3}
     bindAsDefault: 1
     isAtlasV2: 1
     cachedData: {fileID: 0}
