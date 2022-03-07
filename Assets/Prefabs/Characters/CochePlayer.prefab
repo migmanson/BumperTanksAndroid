@@ -371,6 +371,7 @@ MonoBehaviour:
   foco3: {fileID: 2232109126491129504}
   matFocoVerde: {fileID: 2100000, guid: 52c3fabfe079f654e8b76c9990e9f585, type: 2}
   matFocoGris: {fileID: 2100000, guid: 4277a984a25c85a46be5da4a73550a31, type: 2}
+  matInvencible: {fileID: 2100000, guid: 624fe0ad81b154da6a643cc31ded4f06, type: 2}
   umbralShake: 2.5
   MinShakeInterval: 1
   health: 0

@@ -55,12 +55,13 @@ public class ItemInGame : MonoBehaviour
 	{
 		Grid.sfx.PlaySoundByIndex(16, this.transform.position);
 		refScript.isInvincible = true;
-		Material matTemp = refScript.gameObject.GetComponentInChildren<MeshRenderer>().material;
-		refScript.gameObject.GetComponentInChildren<MeshRenderer>().material = null;
+		MeshRenderer playerMesh = refScript.gameObject.GetComponentInChildren<MeshRenderer>();
+		Material matTemp = playerMesh.material;
+		playerMesh.material = refScript.matInvencible;
 		UIController.Instance.TogglePowerUp(1, true);
 		yield return new WaitForSeconds(15);
 		refScript.isInvincible = false;
-		refScript.gameObject.GetComponentInChildren<MeshRenderer>().material = matTemp;
+		playerMesh.material = matTemp;
 		UIController.Instance.TogglePowerUp(1, false);
 		Destroy(gameObject);
 	}
