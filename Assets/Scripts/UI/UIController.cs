@@ -16,7 +16,7 @@ public class UIController : MonoBehaviour
 	public GameObject life2;
 	public GameObject life3;
 	public GameObject life4;
-
+	public UnityEngine.UI.Button playButton;
 	private GameController gameController;
 
 	public void Awake()
@@ -129,13 +129,10 @@ public class UIController : MonoBehaviour
 
 	IEnumerator LoadGame()
 	{
-		//GameObject.Find("CanvasMainMenu").transform.GetComponent<AudioSource>().Stop();
-		//Grid.sfx.PlaySoundByIndex(12, this.transform.position);
 		Grid.sfx.PlaySoundByIndex(12, this.transform.position);
+		playButton.interactable = false;
 		yield return new WaitForSeconds(2);
-		SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
-		//gameController.Playing = true;
-		//gameController.StartGame();
+		SceneManager.LoadScene("GameScene", LoadSceneMode.Single);		
 	}
 
 	public void GoToMainMenu()

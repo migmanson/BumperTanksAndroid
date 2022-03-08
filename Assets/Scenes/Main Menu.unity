@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.44759354, g: 0.39046592, b: 0.27896267, a: 1}
+  m_IndirectSpecularColor: {r: 0.73594874, g: 0.6442766, b: 0.43787944, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -222,9 +222,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 230582532643792082, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+      propertyPath: playButton
+      value: 
+      objectReference: {fileID: 2816430838410784144}
     - target: {fileID: 230582532643792087, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
       propertyPath: m_Name
       value: GAME CONTROLLER
+      objectReference: {fileID: 0}
+    - target: {fileID: 230582532643792087, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 230582532643792086, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
@@ -797,3 +805,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7b6311614aa2f340ab3da4f16a6515a, type: 3}
+--- !u!114 &2816430838410784144 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2816430838524292357, guid: b7b6311614aa2f340ab3da4f16a6515a, type: 3}
+  m_PrefabInstance: {fileID: 2816430838410784143}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

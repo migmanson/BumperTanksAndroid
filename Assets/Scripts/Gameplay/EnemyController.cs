@@ -222,16 +222,18 @@ public class EnemyController : MonoBehaviour
 		foco2.enabled = false;
 		foco3.enabled = false;
 		GetComponent<BoxCollider>().enabled = false;
-		Material[] sharedMaterialsCopy = carBody.sharedMaterials;
-		sharedMaterialsCopy[0] = matCocheAccesDissolve;
-		sharedMaterialsCopy[1] = matCocheBodyDissolve;
-		carBody.sharedMaterials = sharedMaterialsCopy;
+		Material[] carMaterialsCopy = carBody.materials;
+		Material modifiedDissolved = matCocheBodyDissolve;
+		modifiedDissolved.SetColor("_BaseColor", carMaterialsCopy[1].color);
+		carMaterialsCopy[0] = matCocheAccesDissolve;
+		carMaterialsCopy[1] = modifiedDissolved;
+		carBody.materials = carMaterialsCopy;
 		talibanMesh.material = matTalibanDissolve;
 
 		while (t < 0.7f)
 		{
-			carBody.sharedMaterials[0].SetFloat("_Vector", Mathf.Lerp(0, 1, t));
-			carBody.sharedMaterials[1].SetFloat("_Vector", Mathf.Lerp(0, 1, t));
+			carBody.materials[0].SetFloat("_Vector", Mathf.Lerp(0, 1, t));
+			carBody.materials[1].SetFloat("_Vector", Mathf.Lerp(0, 1, t));
 			matTalibanDissolve.SetFloat("_Vector", Mathf.Lerp(0, 1, t));
 			t += 0.8f * Time.deltaTime;
 			yield return null;
