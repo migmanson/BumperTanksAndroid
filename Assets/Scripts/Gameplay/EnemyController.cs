@@ -17,12 +17,15 @@ public class EnemyController : MonoBehaviour
 	public SkinnedMeshRenderer talibanMesh;
 	public Material matFocoVerde;
 	public Material matFocoGris;
-	public Material matDissolve;
+	public Material matCocheBodyDissolve;
+	public Material matCocheAccesDissolve;
 	public Material matTalibanDissolve;
 	public bool isDead;
 	public bool dest;
 	public bool isDissolved;
 	public float t;
+	public MeshRenderer decalFront;
+	public MeshRenderer decalBack;
 
 	public GameObject shooter;
 	public GameObject bullet;
@@ -218,13 +221,17 @@ public class EnemyController : MonoBehaviour
 		foco1.enabled = false;
 		foco2.enabled = false;
 		foco3.enabled = false;
-		GetComponent<BoxCollider>().enabled = false;		
-		carBody.material = matDissolve;
+		GetComponent<BoxCollider>().enabled = false;
+		Material[] sharedMaterialsCopy = carBody.sharedMaterials;
+		sharedMaterialsCopy[0] = matCocheAccesDissolve;
+		sharedMaterialsCopy[1] = matCocheBodyDissolve;
+		carBody.sharedMaterials = sharedMaterialsCopy;
 		talibanMesh.material = matTalibanDissolve;
 
 		while (t < 0.7f)
 		{
-			matDissolve.SetFloat("_Vector", Mathf.Lerp(0, 1, t));
+			carBody.sharedMaterials[0].SetFloat("_Vector", Mathf.Lerp(0, 1, t));
+			carBody.sharedMaterials[1].SetFloat("_Vector", Mathf.Lerp(0, 1, t));
 			matTalibanDissolve.SetFloat("_Vector", Mathf.Lerp(0, 1, t));
 			t += 0.8f * Time.deltaTime;
 			yield return null;

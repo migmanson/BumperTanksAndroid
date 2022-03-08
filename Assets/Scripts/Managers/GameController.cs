@@ -16,7 +16,8 @@ public class GameController : MonoBehaviour
 	public int enemigosPorAparecer;
 	private int enemigosVivosEsteNivel;
 	public int maxEnemigosALaVez;
-
+	public Color[] enemyColors;
+	public Texture2D[] enemyDecals;
 	public void Awake()
 	{
 		Instance = this;
@@ -112,7 +113,20 @@ public class GameController : MonoBehaviour
 			if (enemigosPorAparecer > 1)
 			{
 				enemy = Instantiate(talibanGO, new Vector3(0.5f, 0.0f, -30.5f), Quaternion.Euler(0, -45, 0));
-				enemy.GetComponent<EnemyController>().ApplyDestination();
+				EnemyController talibanScript = enemy.GetComponent<EnemyController>();
+
+				// Random color for enemy car
+				MeshRenderer enemyMesh = enemy.gameObject.GetComponentInChildren<MeshRenderer>();
+				Material[] sharedMaterialsCopy = enemy.gameObject.GetComponentInChildren<MeshRenderer>().materials;
+				Material matTemp = enemyMesh.materials[1];
+				matTemp.SetColor("_BaseColor", enemyColors[Random.Range(0, enemyColors.Length)]);
+				enemyMesh.materials = sharedMaterialsCopy;
+				
+				// Random Decals
+				talibanScript.decalBack.material.mainTexture = enemyDecals[Random.Range(0, enemyDecals.Length)];
+				talibanScript.decalFront.material.mainTexture = enemyDecals[Random.Range(0, enemyDecals.Length)];
+
+				talibanScript.ApplyDestination();
 			}
 			// ultimo enemigo, BOSS
 			else if (enemigosPorAparecer > 0)

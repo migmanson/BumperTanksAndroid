@@ -56,12 +56,18 @@ public class ItemInGame : MonoBehaviour
 		Grid.sfx.PlaySoundByIndex(16, this.transform.position);
 		refScript.isInvincible = true;
 		MeshRenderer playerMesh = refScript.gameObject.GetComponentInChildren<MeshRenderer>();
-		Material matTemp = playerMesh.material;
-		playerMesh.material = refScript.matInvencible;
+		//Debug.LogError("playerMesh")
+		Material[] sharedMaterialsCopy = playerMesh.sharedMaterials;
+		Material matTemp = playerMesh.sharedMaterials[1];
+		sharedMaterialsCopy[1] = refScript.matInvencible;
+		playerMesh.sharedMaterials = sharedMaterialsCopy;
 		UIController.Instance.TogglePowerUp(1, true);
+
 		yield return new WaitForSeconds(15);
+		
 		refScript.isInvincible = false;
-		playerMesh.material = matTemp;
+		sharedMaterialsCopy[1] = matTemp;
+		playerMesh.sharedMaterials = sharedMaterialsCopy;
 		UIController.Instance.TogglePowerUp(1, false);
 		Destroy(gameObject);
 	}
