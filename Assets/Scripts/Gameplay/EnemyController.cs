@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class EnemyController : MonoBehaviour
 {
@@ -12,10 +13,16 @@ public class EnemyController : MonoBehaviour
 	public MeshRenderer foco1;
 	public MeshRenderer foco2;
 	public MeshRenderer foco3;
+	public MeshRenderer carBody;
+	public SkinnedMeshRenderer talibanMesh;
 	public Material matFocoVerde;
 	public Material matFocoGris;
+	public Material matDissolve;
+	public Material matTalibanDissolve;
 	public bool isDead;
 	public bool dest;
+	public bool isDissolved;
+	public float t;
 
 	public GameObject shooter;
 	public GameObject bullet;
@@ -27,6 +34,7 @@ public class EnemyController : MonoBehaviour
 		agent = GetComponent<NavMeshAgent>();
 		agent.speed = 7;
 		isDead = false;
+		isDissolved = false;
 		player = GameObject.FindGameObjectWithTag("Player").transform;
 		agent.SetDestination(player.transform.position);
 		animatorcontroller = GetComponentInChildren<Animator>();
@@ -194,7 +202,33 @@ public class EnemyController : MonoBehaviour
 			animatorcontroller.SetBool("muere", true);
 			Grid.sfx.PlaySoundByIndex(4, this.transform.position);
 			GameController.Instance.EnemyDestroyed();
+			if (!isDissolved)
+			{
+				isDissolved = true;
+				StartCoroutine("DissolvedAnim");
+			}
 			Destroy(this.gameObject, 2.5f);
 		}
 	}
+
+	IEnumerator DissolvedAnim()
+	{
+		yield return new WaitForSeconds(1.5f);
+
+		foco1.enabled = false;
+		foco2.enabled = false;
+		foco3.enabled = false;
+		GetComponent<BoxCollider>().enabled = false;		
+		carBody.material = matDissolve;
+		talibanMesh.material = matTalibanDissolve;
+
+		while (t < 0.7f)
+		{
+			matDissolve.SetFloat("_Vector", Mathf.Lerp(0, 1, t));
+			matTalibanDissolve.SetFloat("_Vector", Mathf.Lerp(0, 1, t));
+			t += 0.8f * Time.deltaTime;
+			yield return null;
+		}
+	}
+
 }

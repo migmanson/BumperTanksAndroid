@@ -28,6 +28,7 @@ public class MiCocheControl : MonoBehaviour
 	public MeshRenderer foco3;
 	public Material matFocoVerde;
 	public Material matFocoGris;
+	public Material matInvencible;
 
 	//shake area
 	public float umbralShake = 3.5f;

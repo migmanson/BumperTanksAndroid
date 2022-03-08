@@ -4912,10 +4912,16 @@ MonoBehaviour:
   foco1: {fileID: 7974861964551178905}
   foco2: {fileID: 365614463718531378}
   foco3: {fileID: 2741299990800610245}
+  carBody: {fileID: 3688652816393459240}
+  talibanMesh: {fileID: 8832422728625932122}
   matFocoVerde: {fileID: 2100000, guid: 52c3fabfe079f654e8b76c9990e9f585, type: 2}
   matFocoGris: {fileID: 2100000, guid: 4277a984a25c85a46be5da4a73550a31, type: 2}
+  matDissolve: {fileID: 2100000, guid: 9d07409f0f3934363a9afaf3cacab123, type: 2}
+  matTalibanDissolve: {fileID: 2100000, guid: c20521a76611c480290f18a0277391a8, type: 2}
   isDead: 0
   dest: 0
+  isDissolved: 0
+  t: 0
   shooter: {fileID: 1306958696}
   bullet: {fileID: 8224683782363943662, guid: 6765f9172e86044f9b019fa529d4bde9, type: 3}
   bulletForce: 20
@@ -5314,6 +5320,10 @@ PrefabInstance:
       propertyPath: m_CullingMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8832422726808217736, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2050d8d71013ae4588d03d36ba92494, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
 --- !u!1 &919132147621909123 stripped
@@ -5324,6 +5334,11 @@ GameObject:
 --- !u!4 &543450651876984889 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
+  m_PrefabInstance: {fileID: 1822978002}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &8832422728625932122 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8832422726808217736, guid: f784d0611a373cb4a9d5129348b6a8ea, type: 3}
   m_PrefabInstance: {fileID: 1822978002}
   m_PrefabAsset: {fileID: 0}
 --- !u!136 &1689070297
