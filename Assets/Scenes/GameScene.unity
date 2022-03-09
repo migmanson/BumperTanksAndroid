@@ -599,6 +599,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1658814824059627534, guid: 8992c7fd418ee4a4b8d42011c301b955, type: 3}
   m_PrefabInstance: {fileID: 932552290}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &343654020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 343654020, guid: c8778e4e2e29bbf46a096434f7191462, type: 3}
+  m_PrefabInstance: {fileID: 43569841985271815}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &351356908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,6 +2241,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1960593056}
     - target: {fileID: 230582532643792082, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+      propertyPath: levelNumber
+      value: 
+      objectReference: {fileID: 343654020}
+    - target: {fileID: 230582532643792082, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
       propertyPath: powerUpImg1
       value: 
       objectReference: {fileID: 43569841985271819}
@@ -3184,7 +3199,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680481119}
-  m_LocalRotation: {x: 2.2232159e-10, y: 0.99821764, z: -0.059678998, w: 0.0000000037186505}
+  m_LocalRotation: {x: -3.9754198e-17, y: 0.99821764, z: -0.059678994, w: -4.4290193e-16}
   m_LocalPosition: {x: -45, y: 2.15, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3699,7 +3714,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945050771}
-  m_LocalRotation: {x: 2.2232159e-10, y: 0.99821764, z: -0.059678998, w: 0.0000000037186505}
+  m_LocalRotation: {x: -3.9754198e-17, y: 0.99821764, z: -0.059678994, w: -4.4290193e-16}
   m_LocalPosition: {x: -45, y: 2.15, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
 	public Animator portonController;
 	public int enemigosPorAparecer;
 	private int enemigosVivosEsteNivel;
-	public int maxEnemigosALaVez;
+	private int maxEnemigosALaVez;
 	public Color[] enemyColors;
 	public Texture2D[] enemyDecals;
 	public List<GameObject> propsSpawnPoints;
@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour
 	{
 		Grid.game.GetDefaultData();
 		Grid.playerStats.GetDefaultPlayerData();
-		Grid.game.SetLevel(13);
+		//Grid.game.SetLevel(13);
 		ComenzarNivel();
 	}
 	public virtual void TerminarPartida()
@@ -67,11 +67,13 @@ public class GameController : MonoBehaviour
 
 	public virtual void ComenzarNivel()
 	{
-		//Debug.LogError("Comenzar Nivel: " + Grid.game.GetLevel());
 		Grid.game.SetNivelComenzado(true);
 		Grid.game.SetNivelTerminado(false);
+		enemigosPorAparecer = Mathf.RoundToInt(Grid.game.GetLevel() / 1.5f + 3);
+		maxEnemigosALaVez = Mathf.RoundToInt(Grid.game.GetLevel() / 10f + 4);
 		SpawnPropsForThisLevel( Mathf.RoundToInt(Grid.game.GetLevel()*1.5f + 5) );
 		UpdateGUIValues();
+		StartCoroutine("ShowLevelNumber");
 		//Debug.LogError("sounds at GameController> : " + Grid.sfx.GameSounds.Length);
 
 		// sonido intro
@@ -174,7 +176,14 @@ public class GameController : MonoBehaviour
 		//Debug.LogError("FINISHED SPAWNING ENEMIES ");
 	}
 
-	IEnumerator FinDePartida()
+	IEnumerator ShowLevelNumber()
+	{
+		UIController.Instance.ShowLevelNumber("NIVEL " + Grid.game.GetLevel());
+		yield return new WaitForSeconds(3f);
+		UIController.Instance.ShowLevelNumber("");
+	}
+
+		IEnumerator FinDePartida()
 	{
 		yield return new WaitForSeconds(3f);
 		//Game Over Sound

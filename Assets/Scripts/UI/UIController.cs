@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
 	public int player_lives;
 	public int player_highscore;
 	public TMPro.TextMeshProUGUI enemiesToSpawn;
+	public TMPro.TextMeshProUGUI levelNumber;
 	public GameObject powerUpImg1;
 	public GameObject powerUpImg2;
 	public GameObject powerUpImg3;
@@ -18,6 +19,7 @@ public class UIController : MonoBehaviour
 	public GameObject life4;
 	public UnityEngine.UI.Button playButton;
 	private GameController gameController;
+
 
 	public void Awake()
 	{
@@ -84,6 +86,10 @@ public class UIController : MonoBehaviour
 		}
 
 
+	}
+	public void ShowLevelNumber(string aLevel)
+	{
+		levelNumber.text = aLevel;
 	}
 
 	public void UpdateScore(int aScore)

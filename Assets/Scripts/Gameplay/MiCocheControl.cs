@@ -224,6 +224,7 @@ public class MiCocheControl : MonoBehaviour
 			lives--;
 			isDead = true;
 			Grid.sfx.PlaySoundByIndex(8, this.transform.position);
+			
 			GameController.Instance.PlayerLostLife();
 			if (lives > 0)
 			{
@@ -245,10 +246,11 @@ public class MiCocheControl : MonoBehaviour
 		isPupGranada = false;
 		health = 3;
 		transform.position = startPos;
+		transform.rotation = Quaternion.Euler(0, 135, 0);
 		foco1.material = matFocoVerde;
 		foco2.material = matFocoVerde;
 		foco3.material = matFocoVerde;
 		yield return new WaitForSeconds(1);
-		isDead = false;
+		isDead = false;		
 	}
 }
