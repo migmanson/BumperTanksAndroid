@@ -27,7 +27,7 @@ public class MiCocheControl : MonoBehaviour
 	public MeshRenderer foco2;
 	public MeshRenderer foco3;
 	public Material matFocoVerde;
-	public Material matFocoGris;
+	//public Material matFocoGris;
 	public Material matInvencible;
 
 	//shake area
@@ -57,9 +57,9 @@ public class MiCocheControl : MonoBehaviour
 		vcam1.LookAt = this.transform;
 		sliderR = GameObject.Find("HandleR").GetComponent<Slider>();
 		sliderL = GameObject.Find("HandleL").GetComponent<Slider>();
-		foco1.material = matFocoVerde;
-		foco2.material = matFocoVerde;
-		foco3.material = matFocoVerde;
+		foco1.material.SetColor("_EmissionColor", Color.green * 0.75f);
+		foco2.material.SetColor("_EmissionColor", Color.green * 0.75f);
+		foco3.material.SetColor("_EmissionColor", Color.green * 0.75f);
 		UIController.Instance.UpdateHealthP1();
 	}
 
@@ -185,23 +185,23 @@ public class MiCocheControl : MonoBehaviour
 
 		if (health == 2)
 		{
-			foco1.material = matFocoVerde;
-			foco2.material = matFocoVerde;
-			foco3.material = matFocoGris;
+			foco1.material.SetColor("_EmissionColor", Color.green * 0.75f);
+			foco2.material.SetColor("_EmissionColor", Color.green * 0.75f);
+			foco3.material.SetColor("_EmissionColor", Color.gray  * 0.75f);
 			Grid.sfx.PlaySoundByIndex(11, this.transform.position);
 		}
 		else if (health == 1)
 		{
-			foco1.material = matFocoVerde;
-			foco2.material = matFocoGris;
-			foco3.material = matFocoGris;
+			foco1.material.SetColor("_EmissionColor", Color.green * 0.75f);
+			foco2.material.SetColor("_EmissionColor", Color.gray  * 0.75f);
+			foco3.material.SetColor("_EmissionColor", Color.gray  * 0.75f);
 			Grid.sfx.PlaySoundByIndex(11, this.transform.position);
 		}
 		if (health <= 0)
 		{
-			foco1.material = matFocoGris;
-			foco2.material = matFocoGris;
-			foco3.material = matFocoGris;
+			foco1.material.SetColor("_EmissionColor", Color.gray * 0.75f);
+			foco2.material.SetColor("_EmissionColor", Color.gray * 0.75f);
+			foco3.material.SetColor("_EmissionColor", Color.gray * 0.75f);
 			PlayerLosesLife();
 		}
 	}
@@ -247,9 +247,9 @@ public class MiCocheControl : MonoBehaviour
 		health = 3;
 		transform.position = startPos;
 		transform.rotation = Quaternion.Euler(0, 135, 0);
-		foco1.material = matFocoVerde;
-		foco2.material = matFocoVerde;
-		foco3.material = matFocoVerde;
+		foco1.material.SetColor("_EmissionColor", Color.green * 0.75f);
+		foco2.material.SetColor("_EmissionColor", Color.green * 0.75f);
+		foco3.material.SetColor("_EmissionColor", Color.green * 0.75f);
 		yield return new WaitForSeconds(1);
 		isDead = false;		
 	}

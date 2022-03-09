@@ -71,7 +71,7 @@ public class GameController : MonoBehaviour
 		Grid.game.SetNivelTerminado(false);
 		enemigosPorAparecer = Mathf.RoundToInt(Grid.game.GetLevel() / 1.5f + 3);
 		maxEnemigosALaVez = Mathf.RoundToInt(Grid.game.GetLevel() / 10f + 4);
-		SpawnPropsForThisLevel( Mathf.RoundToInt(Grid.game.GetLevel()*1.5f + 5) );
+		SpawnPropsForThisLevel(Mathf.RoundToInt(Grid.game.GetLevel() * 1.5f + 5));
 		UpdateGUIValues();
 		StartCoroutine("ShowLevelNumber");
 		//Debug.LogError("sounds at GameController> : " + Grid.sfx.GameSounds.Length);
@@ -100,7 +100,7 @@ public class GameController : MonoBehaviour
 		//GameObject player = Instantiate(playerGO, new Vector3(-45, 0.0f, -5), Quaternion.Euler(0, 135, 0));
 		playerGO.SetActive(true);
 	}
-	
+
 
 	public virtual void SpawnPropsForThisLevel(int level = 1)
 	{
@@ -111,7 +111,7 @@ public class GameController : MonoBehaviour
 			int index = Random.Range(0, propsSpawnPoints.Count);
 			GameObject prop = Instantiate(propPrefabs[Random.Range(0, propPrefabs.Length)], propsSpawnPoints[index].transform.position, Quaternion.Euler(0, Random.Range(0, 180), 0));
 			prop.transform.parent = propParent;
-			propsSpawnPoints.RemoveAt(index);			
+			propsSpawnPoints.RemoveAt(index);
 		}
 	}
 
@@ -121,7 +121,6 @@ public class GameController : MonoBehaviour
 
 		while (enemigosPorAparecer > 0)
 		{
-
 			if (enemigosVivosEsteNivel > maxEnemigosALaVez - 1)
 			{
 				yield return new WaitForSeconds(3f);
@@ -130,7 +129,7 @@ public class GameController : MonoBehaviour
 			yield return new WaitForSeconds(6f);
 			GameObject enemy = null;
 			EnemyController enemyScript;
-			
+
 			// enemigos normales
 			if (enemigosPorAparecer > 1)
 			{
@@ -143,10 +142,10 @@ public class GameController : MonoBehaviour
 				Material matTemp = enemyMesh.materials[1];
 				matTemp.SetColor("_BaseColor", enemyColors[Random.Range(0, enemyColors.Length)]);
 				enemyMesh.materials = sharedMaterialsCopy;
-				
+
 				// Random Decals
-				talibanScript.decalBack.material.mainTexture = enemyDecals[Random.Range(0, enemyDecals.Length)];
-				talibanScript.decalFront.material.mainTexture = enemyDecals[Random.Range(0, enemyDecals.Length)];
+				talibanScript.decalBack.material.mainTexture = enemyDecals[Random.Range(0, enemyDecals.Length - 1)];
+				talibanScript.decalFront.material.mainTexture = enemyDecals[Random.Range(0, enemyDecals.Length - 1)];
 
 				talibanScript.ApplyDestination();
 			}
@@ -155,8 +154,21 @@ public class GameController : MonoBehaviour
 			{
 				enemy = Instantiate(talibanGO, new Vector3(0.5f, 0.0f, -30.5f), Quaternion.Euler(0, -45, 0));
 				enemy.gameObject.transform.name = enemy.gameObject.transform.name + "BOSS";
+				EnemyController talibanScript = enemy.GetComponent<EnemyController>();
 				yield return new WaitForSeconds(0.5f);
-				enemy.GetComponent<EnemyController>().ApplyDestination();
+
+				// Black color for boss car
+				MeshRenderer enemyMesh = enemy.gameObject.GetComponentInChildren<MeshRenderer>();
+				Material[] sharedMaterialsCopy = enemy.gameObject.GetComponentInChildren<MeshRenderer>().materials;
+				Material matTemp = enemyMesh.materials[1];
+				matTemp.SetColor("_BaseColor", Color.black);
+				enemyMesh.materials = sharedMaterialsCopy;
+
+				// Taliban flag Decal
+				talibanScript.decalBack.material.mainTexture = enemyDecals[enemyDecals.Length - 1];
+				talibanScript.decalFront.material.mainTexture = enemyDecals[enemyDecals.Length - 1];
+
+				talibanScript.ApplyDestination();
 			}
 			enemigosPorAparecer--;
 			enemigosVivosEsteNivel++;
@@ -183,7 +195,7 @@ public class GameController : MonoBehaviour
 		UIController.Instance.ShowLevelNumber("");
 	}
 
-		IEnumerator FinDePartida()
+	IEnumerator FinDePartida()
 	{
 		yield return new WaitForSeconds(3f);
 		//Game Over Sound
@@ -211,12 +223,12 @@ public class GameController : MonoBehaviour
 		// instantiate an explosion at the position passed into this function
 		Instantiate(explosionPrefab, aPosition, Quaternion.identity);
 	}
-	public virtual void EnemyDestroyed()
+	public virtual void EnemyDestroyed(bool bossKilled)
 	{
 		enemigosVivosEsteNivel--;
 
 		// deal with enemy destroyed
-		if (enemigosVivosEsteNivel == 0 && enemigosPorAparecer == 0)
+		if ((enemigosVivosEsteNivel == 0 && enemigosPorAparecer == 0) || bossKilled)
 		{
 			StartCoroutine("EndOfLevelVictory");
 		}

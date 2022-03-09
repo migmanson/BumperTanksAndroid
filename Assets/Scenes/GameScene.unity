@@ -2282,7 +2282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 230582532643792086, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
       propertyPath: enemyDecals.Array.size
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 230582532643792086, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
       propertyPath: propPrefabs.Array.size
@@ -2380,6 +2380,10 @@ PrefabInstance:
       propertyPath: enemyDecals.Array.data[13]
       value: 
       objectReference: {fileID: 2800000, guid: 1c32472d9ac74ee4bb534d49835b1413, type: 3}
+    - target: {fileID: 230582532643792086, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+      propertyPath: enemyDecals.Array.data[14]
+      value: 
+      objectReference: {fileID: 2800000, guid: c2004070d82c8a3409b192f8d3e8a4db, type: 3}
     - target: {fileID: 230582532643792086, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
       propertyPath: enemyColors.Array.data[0].a
       value: 0
@@ -3199,7 +3203,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680481119}
-  m_LocalRotation: {x: -3.9754198e-17, y: 0.99821764, z: -0.059678994, w: -4.4290193e-16}
+  m_LocalRotation: {x: 3.9754198e-17, y: 0.99821764, z: -0.059678994, w: 4.4290193e-16}
   m_LocalPosition: {x: -45, y: 2.15, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3714,7 +3718,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945050771}
-  m_LocalRotation: {x: -3.9754198e-17, y: 0.99821764, z: -0.059678994, w: -4.4290193e-16}
+  m_LocalRotation: {x: 3.9754198e-17, y: 0.99821764, z: -0.059678994, w: 4.4290193e-16}
   m_LocalPosition: {x: -45, y: 2.15, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4843,10 +4847,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 752252009634521608, guid: 85eb572bed0e9eb4299e48a5d457e8cc, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6211692226999450212, guid: 85eb572bed0e9eb4299e48a5d457e8cc, type: 3}
       propertyPath: m_Name
       value: ESCENARIOJuegoMesh
@@ -4894,10 +4894,6 @@ PrefabInstance:
     - target: {fileID: 6737259182806474974, guid: 85eb572bed0e9eb4299e48a5d457e8cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7079180078423525026, guid: 85eb572bed0e9eb4299e48a5d457e8cc, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85eb572bed0e9eb4299e48a5d457e8cc, type: 3}
