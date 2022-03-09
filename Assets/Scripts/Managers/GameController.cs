@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,6 +19,9 @@ public class GameController : MonoBehaviour
 	public int maxEnemigosALaVez;
 	public Color[] enemyColors;
 	public Texture2D[] enemyDecals;
+	public List<GameObject> propsSpawnPoints;
+	public GameObject[] propPrefabs;
+
 	public void Awake()
 	{
 		Instance = this;
@@ -48,6 +52,7 @@ public class GameController : MonoBehaviour
 	{
 		Grid.game.GetDefaultData();
 		Grid.playerStats.GetDefaultPlayerData();
+		Grid.game.SetLevel(13);
 		ComenzarNivel();
 	}
 	public virtual void TerminarPartida()
@@ -62,9 +67,10 @@ public class GameController : MonoBehaviour
 
 	public virtual void ComenzarNivel()
 	{
-		Debug.LogError("Comenzar Nivel: " + Grid.game.GetLevel());
+		//Debug.LogError("Comenzar Nivel: " + Grid.game.GetLevel());
 		Grid.game.SetNivelComenzado(true);
 		Grid.game.SetNivelTerminado(false);
+		SpawnPropsForThisLevel( Mathf.RoundToInt(Grid.game.GetLevel()*1.5f + 5) );
 		UpdateGUIValues();
 		//Debug.LogError("sounds at GameController> : " + Grid.sfx.GameSounds.Length);
 
@@ -91,6 +97,20 @@ public class GameController : MonoBehaviour
 		// the player needs to be spawned
 		//GameObject player = Instantiate(playerGO, new Vector3(-45, 0.0f, -5), Quaternion.Euler(0, 135, 0));
 		playerGO.SetActive(true);
+	}
+	
+
+	public virtual void SpawnPropsForThisLevel(int level = 1)
+	{
+		Transform propParent = GameObject.Find("Props").transform;
+		//Debug.LogError("PROPS level: " + level);
+		for (int i = 0; i < level; i++)
+		{
+			int index = Random.Range(0, propsSpawnPoints.Count);
+			GameObject prop = Instantiate(propPrefabs[Random.Range(0, propPrefabs.Length)], propsSpawnPoints[index].transform.position, Quaternion.Euler(0, Random.Range(0, 180), 0));
+			prop.transform.parent = propParent;
+			propsSpawnPoints.RemoveAt(index);			
+		}
 	}
 
 	IEnumerator SpawnEnemies()
