@@ -13,6 +13,10 @@ public class GameController : MonoBehaviour
 	public GameObject playerGO;
 	public GameObject talibanGO;
 	public GameObject bossGO;
+	public GameObject mainVCam;
+	public GameObject alumnasVCam;
+	public GameObject winVCam;
+
 	public Animator portonController;
 	public int enemigosPorAparecer;
 	private int enemigosVivosEsteNivel;
@@ -92,7 +96,7 @@ public class GameController : MonoBehaviour
 
 		enemigosVivosEsteNivel = 0;
 		// do start game functions
-		Invoke("SpawnPlayer", 1);
+		Invoke("SpawnPlayer", 6.0f);
 		//InvokeRepeating("SpawnEnemy", 1, 10);
 		StartCoroutine("SpawnEnemies");
 	}
@@ -120,7 +124,7 @@ public class GameController : MonoBehaviour
 		for (int i = 0; i < level; i++)
 		{
 			int index = Random.Range(0, propsSpawnPoints.Count);
-			GameObject prop = Instantiate(propPrefabs[Random.Range(0, propPrefabs.Length)], propsSpawnPoints[index].transform.position, Quaternion.Euler(0, Random.Range(0, 180), 0));
+			GameObject prop = Instantiate(propPrefabs[Random.Range(0, propPrefabs.Length)], propsSpawnPoints[index].transform.position + Vector3.up, Quaternion.Euler(0, Random.Range(0, 180), 0));
 			prop.transform.parent = propParent;
 			propsSpawnPoints.RemoveAt(index);
 		}
@@ -128,7 +132,7 @@ public class GameController : MonoBehaviour
 
 	IEnumerator SpawnEnemies()
 	{
-		yield return new WaitForSeconds(0.3f);
+		yield return new WaitForSeconds(8f);
 
 		while (enemigosPorAparecer > 0)
 		{
@@ -244,10 +248,12 @@ public class GameController : MonoBehaviour
 		Grid.game.AddLevel(1);
 		TerminarNivel();
 
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(1.0f);
 		//mission clear Sound
 		Grid.sfx.PlaySoundByIndex(3, this.transform.position);
-		yield return new WaitForSeconds(4.0f);
+		mainVCam.SetActive(false);
+		winVCam.SetActive(true);
+		yield return new WaitForSeconds(5.0f);
 		SceneManager.LoadScene("2_GameScene");
 	}
 
@@ -256,6 +262,8 @@ public class GameController : MonoBehaviour
 		Grid.playerStats.SetIsFinished(true);
 		Grid.sfx.PlaySoundByIndex(14, this.transform.position);
 		Debug.LogError("ALUMNAS CAPTURADAS !!!!!!!!!!!!!!!!");
+		mainVCam.SetActive(false);
+		alumnasVCam.SetActive(true);
 		TerminarPartida();
 	}
 

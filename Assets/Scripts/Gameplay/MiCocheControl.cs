@@ -41,9 +41,14 @@ public class MiCocheControl : MonoBehaviour
 	public bool isPupGranada;
 	private Vector3 startPos;
 
-	private Cinemachine.CinemachineVirtualCamera vcam1;
+	public Cinemachine.CinemachineVirtualCamera vcam1;
 
-	void Start()
+    private void Awake()
+    {
+		//DisableControllers();
+    }
+
+    void Start()
 	{
 		lives = Grid.playerStats.GetLives();
 		health = 3;
@@ -52,20 +57,26 @@ public class MiCocheControl : MonoBehaviour
 		isPupGranada = false;
 		startPos = transform.position;
 		car_Rigidbody = GetComponent<Rigidbody>();
-		vcam1 = GameObject.FindObjectOfType<Cinemachine.CinemachineVirtualCamera>();
+		//vcam1 = GameObject.FindObjectOfType<Cinemachine.CinemachineVirtualCamera>();
 		vcam1.Follow = this.transform;
 		vcam1.LookAt = this.transform;
-		sliderR = GameObject.Find("HandleR").GetComponent<Slider>();
-		sliderL = GameObject.Find("HandleL").GetComponent<Slider>();
+		//sliderR = GameObject.Find("HandleR").GetComponent<Slider>();
+		//sliderL = GameObject.Find("HandleL").GetComponent<Slider>();
 		foco1.material.SetColor("_EmissionColor", Color.green * 0.75f);
 		foco2.material.SetColor("_EmissionColor", Color.green * 0.75f);
 		foco3.material.SetColor("_EmissionColor", Color.green * 0.75f);
 		UIController.Instance.UpdateHealthP1();
 	}
 
-	public void GameStart()
+	public void EnableControllers()
 	{
-
+		sliderR.transform.gameObject.SetActive(true);
+		sliderL.transform.gameObject.SetActive(true);
+	}
+	public void DisableControllers()
+	{
+		sliderR.transform.gameObject.SetActive(false);
+		sliderL.transform.gameObject.SetActive(false);
 	}
 
 	void Update()

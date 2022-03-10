@@ -205,8 +205,6 @@ public class UIController : MonoBehaviour
 		StartCoroutine("LoadGame");
 	}
 
-
-
 	public void TogglePowerUp(int index, bool param)
 	{
 		switch (index)
