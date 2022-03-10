@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public virtual void GetDefaultData()
     {
         playerName = "Anon";
-        level = 1;
+        //level = 1;
         highScore = 0;
     }
     public string GetName()

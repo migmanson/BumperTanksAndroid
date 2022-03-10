@@ -18,6 +18,6 @@ public class DDOL : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         yield return Input.acceleration.sqrMagnitude;
         yield return new WaitForSeconds(0.1f);
-        SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
+        SceneManager.LoadScene("1_Main Menu", LoadSceneMode.Single);
     }
 }

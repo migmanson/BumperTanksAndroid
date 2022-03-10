@@ -18,6 +18,11 @@ public class UIController : MonoBehaviour
 	public GameObject life3;
 	public GameObject life4;
 	public UnityEngine.UI.Button playButton;
+	public GameObject panel0110;
+	public GameObject panel1120;
+	public GameObject panel2125;
+	public GameObject panelPausa;
+
 	private GameController gameController;
 
 
@@ -126,6 +131,33 @@ public class UIController : MonoBehaviour
 	{
 		Grid.sfx.PlaySoundByIndex(0, this.transform.position);
 		gameController.Paused = !gameController.Paused;
+
+	}
+
+	public void ContinueGame()
+	{
+		Grid.sfx.PlaySoundByIndex(0, this.transform.position);
+		panelPausa.SetActive(false);
+		gameController.Paused = false;
+	}
+
+	public void PauseMenu()
+	{
+		Grid.sfx.PlaySoundByIndex(0, this.transform.position);
+		panelPausa.SetActive(true);
+		gameController.Paused = true;
+	}
+	public void QuitGame()
+	{
+		Grid.sfx.PlaySoundByIndex(4, this.transform.position);
+		gameController.Playing = false;
+		gameController.Paused = false;
+		gameController.TerminarPartida(true);		
+	}
+
+	public void LoadGameMenu()
+	{
+		SceneManager.LoadScene("1_Main Menu", LoadSceneMode.Single);
 	}
 
 	public void StartGame()
@@ -138,14 +170,42 @@ public class UIController : MonoBehaviour
 		Grid.sfx.PlaySoundByIndex(12, this.transform.position);
 		playButton.interactable = false;
 		yield return new WaitForSeconds(2);
-		SceneManager.LoadScene("GameScene", LoadSceneMode.Single);		
+		SceneManager.LoadScene("2_GameScene", LoadSceneMode.Single);		
 	}
 
-	public void GoToMainMenu()
+	public void Open0110()
 	{
-		gameController.Playing = false;
-		SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
+		panel0110.SetActive(true);
+		panel1120.SetActive(false);
+		panel2125.SetActive(false);
 	}
+	public void Open1120()
+	{
+		panel0110.SetActive(false);
+		panel1120.SetActive(true);
+		panel2125.SetActive(false);
+	}
+	public void Open2125()
+	{
+		panel0110.SetActive(false);
+		panel1120.SetActive(false);
+		panel2125.SetActive(true);
+	}
+
+	public void ClosePanels()
+	{
+		panel0110.SetActive(false);
+		panel1120.SetActive(false);
+		panel2125.SetActive(false);
+	}
+
+	public void PlayLevel(int level)
+	{
+		Grid.game.SetLevel(level);
+		StartCoroutine("LoadGame");
+	}
+
+
 
 	public void TogglePowerUp(int index, bool param)
 	{

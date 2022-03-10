@@ -52,17 +52,28 @@ public class GameController : MonoBehaviour
 	{
 		Grid.game.GetDefaultData();
 		Grid.playerStats.GetDefaultPlayerData();
-		//Grid.game.SetLevel(13);
+		//Grid.game.SetLevel(15);
 		ComenzarNivel();
 	}
-	public virtual void TerminarPartida()
+	public virtual void TerminarPartida(bool fromPauseMenu = false)
 	{
-		Debug.LogError("TerminarPartida");
+		//Debug.LogError("TerminarPartida");
 		enemigosVivosEsteNivel = 0;
 		Grid.game.SetPartidaComenzada(false);
 		Grid.game.SetPartidaTerminada(true);
 		TerminarNivel();
-		StartCoroutine("FinDePartida");
+		StartCoroutine("FinDePartida", fromPauseMenu);
+	}
+	IEnumerator FinDePartida(bool fromPauseMenu)
+	{
+		if (!fromPauseMenu)
+		{
+			yield return new WaitForSeconds(3f);
+			//Game Over Sound
+			Grid.sfx.PlaySoundByIndex(9, this.transform.position);
+		}
+		yield return new WaitForSecondsRealtime(3f);
+		UIController.Instance.LoadGameMenu();
 	}
 
 	public virtual void ComenzarNivel()
@@ -88,7 +99,7 @@ public class GameController : MonoBehaviour
 
 	public virtual void TerminarNivel()
 	{
-		Debug.LogError("TerminarNivel");
+		//Debug.LogError("TerminarNivel");
 		Grid.game.SetNivelTerminado(true);
 		Grid.game.SetNivelComenzado(false);
 	}
@@ -195,14 +206,6 @@ public class GameController : MonoBehaviour
 		UIController.Instance.ShowLevelNumber("");
 	}
 
-	IEnumerator FinDePartida()
-	{
-		yield return new WaitForSeconds(3f);
-		//Game Over Sound
-		Grid.sfx.PlaySoundByIndex(9, this.transform.position);
-		yield return new WaitForSeconds(4f);
-		UIController.Instance.GoToMainMenu();
-	}
 
 	public virtual void SpawnBoss()
 	{
@@ -245,7 +248,7 @@ public class GameController : MonoBehaviour
 		//mission clear Sound
 		Grid.sfx.PlaySoundByIndex(3, this.transform.position);
 		yield return new WaitForSeconds(4.0f);
-		SceneManager.LoadScene("GameScene");
+		SceneManager.LoadScene("2_GameScene");
 	}
 
 	public virtual void AlumnasCapturadas()

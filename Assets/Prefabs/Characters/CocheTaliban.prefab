@@ -140,7 +140,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bccc11998b9480645a38aacd9e76070c, type: 2}
+  - {fileID: 2100000, guid: 7674ca0584ee31f45892123850df09e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -221,7 +221,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 003c9501969b5b440875220506bcd937, type: 2}
+  - {fileID: 2100000, guid: 31bcafebc4b23594cbb77aa1aa04038e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5079,7 +5079,6 @@ MonoBehaviour:
   carBody: {fileID: 3688652816393459240}
   talibanMesh: {fileID: 8832422728625932122}
   matFocoVerde: {fileID: 2100000, guid: 52c3fabfe079f654e8b76c9990e9f585, type: 2}
-  matFocoGris: {fileID: 2100000, guid: 4277a984a25c85a46be5da4a73550a31, type: 2}
   matCocheBodyDissolve: {fileID: 2100000, guid: 9d07409f0f3934363a9afaf3cacab123, type: 2}
   matCocheAccesDissolve: {fileID: 2100000, guid: fdb3b9657c5a63542bace46240b2a6dd, type: 2}
   matTalibanDissolve: {fileID: 2100000, guid: c20521a76611c480290f18a0277391a8, type: 2}
