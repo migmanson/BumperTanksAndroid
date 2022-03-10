@@ -77,6 +77,7 @@ public class GameController : MonoBehaviour
 			Grid.sfx.PlaySoundByIndex(9, this.transform.position);
 		}
 		yield return new WaitForSecondsRealtime(3f);
+		Paused = false;
 		UIController.Instance.LoadGameMenu();
 	}
 
@@ -206,7 +207,7 @@ public class GameController : MonoBehaviour
 	IEnumerator ShowLevelNumber()
 	{
 		UIController.Instance.ShowLevelNumber("NIVEL " + Grid.game.GetLevel());
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(3.2f);
 		UIController.Instance.ShowLevelNumber("");
 	}
 
