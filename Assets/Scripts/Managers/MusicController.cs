@@ -4,7 +4,7 @@ public class MusicController : MonoBehaviour
 {
     private float volume;
     public string gamePrefsName = "BumperTanks";
-    public AudioClip music;
+    public AudioClip[] music;
     public bool loopMusic;
     private AudioSource source;
     private GameObject sourceGO;
@@ -14,6 +14,19 @@ public class MusicController : MonoBehaviour
     private float targetVolume;
     public float fadeTime = 5f;
     public bool shouldFadeInAtStart = true;
+    public static MusicController Instance;
+    public bool playThisOnAwake = false;
+    public int initialIndexClip;
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            return;
+        }
+        Instance = this;
+    }
+
+
     void Start()
     {
         // we will grab the volume from PlayerPrefs when this script 
@@ -33,8 +46,8 @@ public class MusicController : MonoBehaviour
         sourceGO = new GameObject("Music_AudioSource");
         source = sourceGO.AddComponent<AudioSource>();
         source.name = "MusicAudioSource";
-        source.playOnAwake = true;
-        source.clip = music;
+        source.playOnAwake = playThisOnAwake;
+        source.clip = music[initialIndexClip];
         source.volume = volume;
         // the script will automatically fade in if this is set
         if (shouldFadeInAtStart)
@@ -48,10 +61,11 @@ public class MusicController : MonoBehaviour
             volume = volumeON;
         }
         // set up default values
-        targetFadeState = 1;
+        targetFadeState = 0;
         targetVolume = volumeON;
         source.volume = volume;
     }
+
     void Update()
     {
         // if the audiosource is not playing and it's supposed to loop, play it again
@@ -60,21 +74,24 @@ public class MusicController : MonoBehaviour
         // deal with volume fade in/out
         if (fadeState != targetFadeState)
         {
-            if (targetFadeState == 1)
+            if (targetFadeState > 0.99f)
             {
                 if (volume == volumeON)
                     fadeState = 1;
             }
             else
             {
-                if (volume == 0)
+                if (volume < 0.01f)
+                {
                     fadeState = 0;
+                    source.Stop();
+                }
             }
-            volume = Mathf.Lerp(volume, targetVolume,
-           Time.deltaTime * fadeTime);
+            volume = Mathf.Lerp(volume, targetVolume, Time.deltaTime * fadeTime);
             source.volume = volume;
         }
     }
+
     public void FadeIn(float fadeAmount)
     {
         //Debug.LogError("Fade In");
@@ -84,6 +101,7 @@ public class MusicController : MonoBehaviour
         targetVolume = volumeON;
         fadeTime = fadeAmount;
     }
+
     public void FadeOut(float fadeAmount)
     {
         //Debug.LogError("Fade Out");
@@ -100,7 +118,7 @@ public class MusicController : MonoBehaviour
         {
             //Debug.LogError("Stop music");        
             loopMusic = false;
-            source.Stop();
+            source.Pause();
         }
     }
 
@@ -111,7 +129,25 @@ public class MusicController : MonoBehaviour
             //Debug.LogError("Play music");
             loopMusic = true;
             source.Play();
+            FadeIn(5);
+        }
+        else
+        {
+            source.Play();
         }
     }
 
+    public void SwitchClip(int newClip, float waitAmount = 0, float fadeAmount = 5)
+    {
+        StartCoroutine(CambioDeMusica(newClip, waitAmount, fadeAmount));
+    }
+
+    IEnumerator CambioDeMusica(int newClip, float waitAmount, float fadeAmount)
+    {
+        FadeOut(fadeAmount);
+        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(waitAmount);
+        source.clip = music[newClip];
+        FadeIn(50);
+    }
 }

@@ -144,6 +144,7 @@ public class UIController : MonoBehaviour
         pauseButton.SetActive(true);
         sliderR.SetActive(true);
         sliderL.SetActive(true);
+        MusicController.Instance.ResumePlayMusic(100);
         gameController.Paused = false;
     }
 
@@ -154,6 +155,7 @@ public class UIController : MonoBehaviour
         pauseButton.SetActive(false);
         sliderR.SetActive(false);
         sliderL.SetActive(false);
+        MusicController.Instance.PauseMusic(100);
         gameController.Paused = true;
     }
     public void QuitGame()

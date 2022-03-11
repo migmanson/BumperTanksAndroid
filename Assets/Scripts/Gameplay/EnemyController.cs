@@ -48,11 +48,15 @@ public class EnemyController : MonoBehaviour
         {
             InvokeRepeating("ShootBullet", 5, 5);
             health = 3;
+            agent.speed = 4;
+            agent.acceleration = 1;
         }
         else
         {
             InvokeRepeating("ShootBullet", 4, 3.5f);
             health = 5;
+            agent.speed = 5;
+            agent.acceleration = 2;
         }
     }
 
@@ -67,14 +71,10 @@ public class EnemyController : MonoBehaviour
             if (!this.transform.name.Contains("BOSS"))
             {
                 agent.SetDestination(controlpoints[Random.Range(0, controlpoints.Length)].position);
-                agent.speed = 4;
-                agent.acceleration = 1;
             }
             else
             {
                 agent.SetDestination(controlpoints[Random.Range(0, 4)].position);
-                agent.speed = 5;
-                agent.acceleration = 2;
             }
         }
     }

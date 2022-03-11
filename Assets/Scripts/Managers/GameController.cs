@@ -19,12 +19,12 @@ public class GameController : MonoBehaviour
 
 	public Animator portonController;
 	public int enemigosPorAparecer;
-	private int enemigosVivosEsteNivel;
-	private int maxEnemigosALaVez;
-	public Color[] enemyColors;
 	public Texture2D[] enemyDecals;
 	public List<GameObject> propsSpawnPoints;
 	public GameObject[] propPrefabs;
+	public Color[] enemyColors;
+	private int maxEnemigosALaVez;
+	private int enemigosVivosEsteNivel;
 
 	public void Awake()
 	{
@@ -76,7 +76,7 @@ public class GameController : MonoBehaviour
 			//Game Over Sound
 			Grid.sfx.PlaySoundByIndex(9, this.transform.position);
 		}
-		yield return new WaitForSecondsRealtime(3f);
+		yield return new WaitForSecondsRealtime(4f);
 		Paused = false;
 		UIController.Instance.LoadGameMenu();
 	}
@@ -115,8 +115,8 @@ public class GameController : MonoBehaviour
 		// the player needs to be spawned
 		//GameObject player = Instantiate(playerGO, new Vector3(-45, 0.0f, -5), Quaternion.Euler(0, 135, 0));
 		playerGO.SetActive(true);
+		MusicController.Instance.SwitchClip(0, 1.5f, 2);
 	}
-
 
 	public virtual void SpawnPropsForThisLevel(int level = 1)
 	{
@@ -190,6 +190,10 @@ public class GameController : MonoBehaviour
 			enemigosVivosEsteNivel++;
 			UpdateGUIValues();
 			portonController.SetTrigger("AbrePorton");
+			if (enemigosPorAparecer == 0) //musica boss
+			{
+				MusicController.Instance.SwitchClip(4, 0, 5);
+			}
 			enemyScript = enemy.GetComponent<EnemyController>();
 			//yield return new WaitForSeconds(3f);
 			while (!enemyScript.exitGarage && !enemyScript.isDead)
@@ -231,6 +235,7 @@ public class GameController : MonoBehaviour
 		// instantiate an explosion at the position passed into this function
 		Instantiate(explosionPrefab, aPosition, Quaternion.identity);
 	}
+
 	public virtual void EnemyDestroyed(bool bossKilled)
 	{
 		enemigosVivosEsteNivel--;
@@ -248,6 +253,7 @@ public class GameController : MonoBehaviour
 		Grid.game.SetPartidaTerminada(false);
 		Grid.game.AddLevel(1);
 		TerminarNivel();
+		MusicController.Instance.FadeOut(10);
 
 		yield return new WaitForSeconds(1.0f);
 		//mission clear Sound
@@ -265,6 +271,7 @@ public class GameController : MonoBehaviour
 		Debug.LogError("ALUMNAS CAPTURADAS !!!!!!!!!!!!!!!!");
 		mainVCam.SetActive(false);
 		alumnasVCam.SetActive(true);
+		MusicController.Instance.FadeOut(10);
 		TerminarPartida();
 	}
 

@@ -4,6 +4,11 @@ using System.Collections;
 
 public class ItemInGame : MonoBehaviour
 {
+    GameController gameController;
+    void Start()
+    {
+        gameController = GameObject.Find("GAME CONTROLLER").GetComponent<GameController>();
+    }
     void Update()
     {
         transform.Rotate(0, 120 * Time.deltaTime, 0);
@@ -13,7 +18,7 @@ public class ItemInGame : MonoBehaviour
     {
         MiCocheControl refScript = other.GetComponent<MiCocheControl>();
 
-        if (!refScript.isDead)
+        if (!refScript.isDead && !Grid.playerStats.GetIsFinished())
         {
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<BoxCollider>().enabled = false;
@@ -67,6 +72,7 @@ public class ItemInGame : MonoBehaviour
         sharedMaterialsCopy[1] = refScript.matInvencible;
         playerMesh.sharedMaterials = sharedMaterialsCopy;
         UIController.Instance.TogglePowerUp(1, true);
+        MusicController.Instance.SwitchClip(1, 0, 50);
 
         yield return new WaitForSeconds(15);
 
@@ -74,6 +80,13 @@ public class ItemInGame : MonoBehaviour
         sharedMaterialsCopy[1] = matTemp;
         playerMesh.sharedMaterials = sharedMaterialsCopy;
         UIController.Instance.TogglePowerUp(1, false);
+        if (!Grid.playerStats.GetIsFinished())
+        {
+            if (gameController.enemigosPorAparecer == 0)
+                MusicController.Instance.SwitchClip(4, 0, 50);
+            else
+                MusicController.Instance.SwitchClip(0, 0, 50);
+        }
         Destroy(gameObject);
     }
 
@@ -83,20 +96,39 @@ public class ItemInGame : MonoBehaviour
         GameObject[] enemigos = GameObject.FindGameObjectsWithTag("CocheTaliban");
 
         foreach (GameObject coche in enemigos)
-        {
-            coche.GetComponent<NavMeshAgent>().speed = 0.25f;
+        {           
+            coche.GetComponent<NavMeshAgent>().speed = 0.05f;
         }
 
         UIController.Instance.TogglePowerUp(2, true);
+
+        MusicController.Instance.SwitchClip(3, 0, 50);
+
         yield return new WaitForSeconds(15);
+
         enemigos = GameObject.FindGameObjectsWithTag("CocheTaliban");
 
         foreach (GameObject coche in enemigos)
         {
-            coche.GetComponent<NavMeshAgent>().speed = 4.0f;
+            if (!coche.transform.name.Contains("BOSS"))
+            {
+                coche.GetComponent<NavMeshAgent>().speed = 4.0f;
+            }
+            else
+            {
+                coche.GetComponent<NavMeshAgent>().speed = 5.0f;
+            }
         }
 
         UIController.Instance.TogglePowerUp(2, false);
+        if (!Grid.playerStats.GetIsFinished())
+        {
+            if (gameController.enemigosPorAparecer == 0)
+                MusicController.Instance.SwitchClip(4, 0, 50);
+            else
+                MusicController.Instance.SwitchClip(0, 0, 50);
+        }
+
         Destroy(gameObject);
     }
 }

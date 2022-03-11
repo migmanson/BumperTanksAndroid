@@ -144,7 +144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &10686009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,10 +158,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamePrefsName: BumperTanks
-  music: {fileID: 8300000, guid: f3efc2391a68908468d70e75757bd636, type: 3}
+  music:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   loopMusic: 1
   fadeTime: 0.2
   shouldFadeInAtStart: 1
+  playThisOnAwake: 0
+  initialIndexClip: 0
 --- !u!4 &10686010
 Transform:
   m_ObjectHideFlags: 0
@@ -3451,7 +3456,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 230582532643792093, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
+    - {fileID: 230582532643792080, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ee2f3e0a980ff65438e7c6aefc14574a, type: 3}
 --- !u!114 &1456580834 stripped
 MonoBehaviour:
@@ -4233,7 +4240,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680481119}
-  m_LocalRotation: {x: 2.2232159e-10, y: 0.99821764, z: -0.059678998, w: 0.0000000037186505}
+  m_LocalRotation: {x: -3.9754198e-17, y: 0.99821764, z: -0.059678994, w: -4.4290193e-16}
   m_LocalPosition: {x: -45, y: 2.15, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -4872,7 +4879,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945050771}
-  m_LocalRotation: {x: 2.2232159e-10, y: 0.99821764, z: -0.059678998, w: 0.0000000037186505}
+  m_LocalRotation: {x: -3.9754198e-17, y: 0.99821764, z: -0.059678994, w: -4.4290193e-16}
   m_LocalPosition: {x: -45, y: 2.15, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4885,6 +4892,61 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 43569840942082566, guid: c8778e4e2e29bbf46a096434f7191462, type: 3}
   m_PrefabInstance: {fileID: 43569841985271815}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2037243614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2037243616}
+  - component: {fileID: 2037243615}
+  m_Layer: 0
+  m_Name: MusicInGame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2037243615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037243614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7583fb756e7be0541b4ce5d9881c8673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamePrefsName: BumperTanks
+  music:
+  - {fileID: 8300000, guid: f3efc2391a68908468d70e75757bd636, type: 3}
+  - {fileID: 8300000, guid: 8cbb405d473bbf04bae0c9d9c5319115, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 46e4d415d50e26d4695daa453ef8fb93, type: 3}
+  - {fileID: 8300000, guid: 2030bd80a5a2f1748ac340f954241956, type: 3}
+  loopMusic: 1
+  fadeTime: 0.1
+  shouldFadeInAtStart: 0
+  playThisOnAwake: 0
+  initialIndexClip: 2
+--- !u!4 &2037243616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037243614}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -36.839977, y: 3.6326714, z: -10.952606}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2050851809
 GameObject:
   m_ObjectHideFlags: 0
