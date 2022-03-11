@@ -137,7 +137,7 @@ public class MiCocheControl : MonoBehaviour
 															bulletForce,
 															ForceMode.Impulse);
 				Destroy(tmpBullet.gameObject, 3f);
-
+				Grid.sfx.PlaySoundByIndex(18, this.transform.position);
 				// efecto patea hacia atras
 				car_Rigidbody.AddForce(-transform.forward * bulletForce * 75, ForceMode.Impulse);
 			}
@@ -174,7 +174,7 @@ public class MiCocheControl : MonoBehaviour
 		{
 			if (collision.transform.tag == "CocheTaliban")
 			{
-				collision.gameObject.GetComponent<EnemyController>().UpdateEnemyHealth(3);
+				collision.gameObject.GetComponent<EnemyController>().UpdateEnemyHealth(5);
 				collision.gameObject.GetComponent<EnemyController>().Dies();
 			}
 		}
@@ -184,7 +184,7 @@ public class MiCocheControl : MonoBehaviour
 		{
 			UpdateHealth(1);
 		}
-		if (collision.transform.CompareTag("BulletEnemiga") && !Grid.game.GetNivelTerminado())
+		if (collision.transform.CompareTag("BulletEnemiga") && !Grid.game.GetNivelTerminado() && !isInvincible)
 		{
 			UpdateHealth(1);
 		}
