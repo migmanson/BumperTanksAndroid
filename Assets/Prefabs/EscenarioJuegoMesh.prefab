@@ -13887,7 +13887,8 @@ PrefabInstance:
       propertyPath: looping
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400004, guid: e116059325ae3e640a98f7a1b89d797b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e116059325ae3e640a98f7a1b89d797b, type: 3}
 --- !u!1001 &1996101824725377575
 PrefabInstance:
@@ -14034,7 +14035,8 @@ PrefabInstance:
       propertyPath: startDelay.scalar
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: 45d8278ecbe1a6f4ebe63dabe3563a31, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 45d8278ecbe1a6f4ebe63dabe3563a31, type: 3}
 --- !u!1001 &7857960495194451470
 PrefabInstance:
