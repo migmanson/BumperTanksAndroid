@@ -53,7 +53,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            InvokeRepeating("ShootBullet", 4, 3.5f);
+            InvokeRepeating("ShootBullet", 4, 2.5f);
             health = 5;
             agent.speed = 5;
             agent.acceleration = 2;

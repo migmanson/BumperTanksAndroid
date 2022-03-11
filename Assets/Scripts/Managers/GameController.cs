@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
 	public GameObject mainVCam;
 	public GameObject alumnasVCam;
 	public GameObject winVCam;
+	public GameObject corazones;
+	public GameObject sangre;
 
 	public Animator portonController;
 	public int enemigosPorAparecer;
@@ -269,9 +271,12 @@ public class GameController : MonoBehaviour
 		Grid.playerStats.SetIsFinished(true);
 		Grid.sfx.PlaySoundByIndex(14, this.transform.position);
 		Debug.LogError("ALUMNAS CAPTURADAS !!!!!!!!!!!!!!!!");
+		UIController.Instance.ShowLevelNumber("R.I.P.  ALUMNAS");
 		mainVCam.SetActive(false);
 		alumnasVCam.SetActive(true);
 		MusicController.Instance.FadeOut(10);
+		corazones.SetActive(false);
+		sangre.SetActive(true);
 		TerminarPartida();
 	}
 
